@@ -16,23 +16,20 @@ vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappin
 require("lazy").setup({
     {
         "folke/which-key.nvim",
-        event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
+        lazy = true,
     },
     {
-		'nvim-telescope/telescope.nvim', tag = '0.1.2',
-		dependencies = { 'nvim-lua/plenary.nvim' }
-	},
-	{
-		'rose-pine/neovim', 	name = 'rose-pine',
+        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    {
+        'rose-pine/neovim', 	name = 'rose-pine',
 		config = function()
 			vim.cmd('colorscheme rose-pine')
 		end
 	},
 	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    { "nvim-treesitter/nvim-treesitter-context" },
 	{  "theprimeagen/harpoon" },
 	{
 		'stevearc/oil.nvim',
@@ -78,4 +75,5 @@ require("lazy").setup({
             -- refer to the configuration section below
         }
     },
+    { "fatih/vim-go" },
 })
