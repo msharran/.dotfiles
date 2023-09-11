@@ -1,7 +1,15 @@
 .PHONY: setup
 setup:
-	stow .
+	stow -v .
+
+.PHONY: ls
+ls:
+	ls -lhat ~ | grep .dotfiles
+
+.PHONY: dryrun
+dryrun:
+	stow -v -n .
 
 .PHONY: clean
 clean:
-	stow -D .
+	stow -v -D .

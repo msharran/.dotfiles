@@ -27,6 +27,9 @@ format = '[$env_value]($style) '
 format = 'on [$symbol($profile )(\($region\) )]($style)'
 symbol = 'aws '
 
+[container]
+format = '[$symbol \[$name\]]($style) '
+
 # [git_branch]
 # truncation_length = 25
 # truncation_symbol = '*'
