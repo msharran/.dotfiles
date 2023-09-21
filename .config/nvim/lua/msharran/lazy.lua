@@ -22,12 +22,6 @@ require("lazy").setup({
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    {
-        'rose-pine/neovim', 	name = 'rose-pine',
-		config = function()
-			vim.cmd('colorscheme rose-pine')
-		end
-	},
 	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     { "nvim-treesitter/nvim-treesitter-context" },
 	{  "theprimeagen/harpoon" },
@@ -76,4 +70,22 @@ require("lazy").setup({
         }
     },
     { "fatih/vim-go" },
+    { "sotte/presenting.vim" },
+    {
+        "ruifm/gitlinker.nvim",
+        event = "BufRead",
+        dependencies = "nvim-lua/plenary.nvim",
+    },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
+    {
+        "nvim-pack/nvim-spectre",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
+    { "christoomey/vim-tmux-navigator" },
+    -- themes
+    { 'rose-pine/neovim',	name = 'rose-pine' },
+    { 'Mofiqul/dracula.nvim' },
 })

@@ -1,6 +1,9 @@
 [character]
 success_symbol = '[\$](bold green)'
 
+[ruby]
+disabled = true
+
 [kubernetes]
 format = '[⛵ $context \($namespace\)](bold blue) '
 disabled = false

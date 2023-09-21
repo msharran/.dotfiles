@@ -20,6 +20,7 @@ export GO111MODULE=on
 export PATH=$PATH:$HOME/usr/local/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.npm-global/bin
+export NOTES="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes"
 
 ### FUNCTIONS
 
@@ -35,7 +36,7 @@ which_aws_account() {
 }
 
 notes() {
-  cd /Users/sharranm/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes/
+  cd $NOTES
 }
 
 ssh_centralsre() {
