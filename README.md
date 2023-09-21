@@ -1,5 +1,11 @@
 # .dotfiles
 
+## Prerequisites
+
+Install the following,
+
+- GNU Stow `brew install stow`
+
 ## Usage
 
 To create symlinks for the dotfiles in this repo
@@ -7,7 +13,13 @@ to your home directory
 
 1. Clone the repo into your home directory.
 
-2. Run setup
+> I am using Github CLI, you can use any means like http or ssh
+
+```bash
+gh repo clone msharran/.dotfiles
+```
+
+2. Install all the dotfiles
 
 ```bash
 cd .dotfiles
@@ -23,6 +35,9 @@ drwxr-xr-x    9 sharranm  staff       288 Sep 11 03:46 .dotfiles
 lrwxr-xr-x    1 sharranm  staff        16 Sep 11 03:46 .zshrc -> .dotfiles/.zshrc
 ```
 
+4. If you update your .dotfiles repo, rerun `make`
+command again
+
 ---
 
 If you want to clean up all symlinks, run
@@ -30,3 +45,4 @@ If you want to clean up all symlinks, run
 ```bash
 make clean
 ```
+
