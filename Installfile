@@ -1,0 +1,19 @@
+# https://formulae.brew.sh/formula/stow
+install "stow"
+
+# Installs the dotfiles using the Makefile
+# in this repo.
+install "dotfiles", cmd: "make", post_install: <<-SH
+make ls
+SH
+
+# https://github.com/BurntSushi/ripgrep
+install "rg"
+
+# https://github.com/sharkdp/fd
+install "fd"
+
+# https://github.com/junegunn/fzf
+install "fzf", post_install: <<-SH
+yes | $(brew --prefix)/opt/fzf/install
+SH

@@ -9,7 +9,7 @@ class Pkg
 end
 
 # This class is responsible for parsing the Pkgfile
-class PkgMgr
+class Installer
   attr_reader :pkgs
 
   def initialize
@@ -18,9 +18,9 @@ class PkgMgr
     @pkgs = []
   end
 
-  def read_pkgfile
-    # Read the contents of the Brewfile as a string.
-    contents = File.read('Pkgfile')
+  def read_installfile
+    # Read the contents of the Installfile as a string.
+    contents = File.read('Installfile')
 
     # Evaluate the Ruby string within the context
     # of the Dsl instance. That is, execute whatever
@@ -31,24 +31,24 @@ class PkgMgr
 
   private
 
-  # Pkg directive definition
+  # install directive definition
   # Installs pkg using brew
   # If cmd is provided, it will be executed
   # instead of brew install.
-  def pkg(name, options = {})
+  def install(pkg_name, options = {})
     pkg = Pkg.new
-    pkg.name = name
+    pkg.name = pkg_name
     pkg.cmd = options.fetch(:cmd, nil)
     pkg.post_install = options.fetch(:post_install, nil)
     @pkgs << pkg
   end
 end
 
-pm = PkgMgr.new
-pm.read_pkgfile
+installer = Installer.new
+installer.read_installfile
 
-pm.pkgs.each_with_index do |pkg, i|
-  msg = "Installing #{pkg.name} (#{i + 1}/#{pm.pkgs.length})...".colorize(mode: :bold)
+installer.pkgs.each_with_index do |pkg, i|
+  msg = "Installing #{pkg.name} (#{i + 1}/#{installer.pkgs.length})...".colorize(mode: :bold)
   puts "🍺 #{msg}"
 
   cmd = if pkg.cmd.nil? || pkg.cmd.empty?
@@ -58,7 +58,7 @@ pm.pkgs.each_with_index do |pkg, i|
         end
 
   puts "Command: #{cmd.light_blue.underline}"
-  system(cmd)
+  system(cmd) or raise "Something went wrong while executing the command #{cmd}"
   puts "✅ #{pkg.name} installed"
 
   next if pkg.post_install.nil?
@@ -66,6 +66,6 @@ pm.pkgs.each_with_index do |pkg, i|
   msg = "Running post install script #{pkg.post_install}...".colorize(mode: :bold)
   puts "🍺 #{msg}"
   puts "Command: #{pkg.post_install.light_blue.underline}"
-  system(pkg.post_install)
+  system(pkg.post_install) or raise "Something went wrong while running #{pkg.post_install}"
   puts '✅ Post install script completed'
 end
