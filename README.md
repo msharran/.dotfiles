@@ -2,9 +2,12 @@
 
 ## Prerequisites
 
-Install the following,
+Install using pkgman,
 
-- GNU Stow `brew install stow`
+```bash
+# use ruby version > 3
+ruby pkgman.rb
+```
 
 ## Usage
 
