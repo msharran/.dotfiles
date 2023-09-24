@@ -58,14 +58,20 @@ installer.pkgs.each_with_index do |pkg, i|
         end
 
   puts "Command: #{cmd.light_blue.underline}"
-  system(cmd) or raise "Something went wrong while executing the command #{cmd}"
-  puts "✅ #{pkg.name} installed"
+  if system(cmd)
+    puts "✅ #{pkg.name} installed"
+  else
+    puts "🔴 #{pkg.name} failed to install"
+  end
 
   next if pkg.post_install.nil?
 
   msg = "Running post install script #{pkg.post_install}...".colorize(mode: :bold)
   puts "🍺 #{msg}"
   puts "Command: #{pkg.post_install.light_blue.underline}"
-  system(pkg.post_install) or raise "Something went wrong while running #{pkg.post_install}"
-  puts '✅ Post install script completed'
+  if system(pkg.post_install)
+    puts "✅ Successfully ran post install script"
+  else
+    puts "🔴 Failed to run post install script"
+  end
 end

@@ -1,3 +1,11 @@
+# Install oh-my-zsh
+install "oh-my-zsh", cmd: <<-SH
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+SH
+
+# Install neovim
+install "neovim", post_install: "nvim --version"
+
 # https://formulae.brew.sh/formula/stow
 install "stow"
 
