@@ -2,3 +2,6 @@
 .*\.md
 LICENSE
 Makefile
+Gemfile.*
+.*\.rb
+Installfile
