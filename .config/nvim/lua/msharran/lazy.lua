@@ -31,7 +31,10 @@ require("lazy").setup({
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{ "mbbill/undotree" },
-	{ "tpope/vim-fugitive" },
+    {
+        'ruifm/gitlinker.nvim',
+        dependencies = 'nvim-lua/plenary.nvim',
+    },
 	{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
@@ -62,20 +65,11 @@ require("lazy").setup({
         lazy = false,
     },
     {
-        "folke/zen-mode.nvim",
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons'}
     },
     { "fatih/vim-go" },
     { "sotte/presenting.vim" },
-    {
-        "ruifm/gitlinker.nvim",
-        event = "BufRead",
-        dependencies = "nvim-lua/plenary.nvim",
-    },
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -85,7 +79,8 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     { "christoomey/vim-tmux-navigator" },
+    { "junegunn/fzf.vim" },
+    { "junegunn/fzf" },
     -- themes
-    { 'rose-pine/neovim',	name = 'rose-pine' },
-    { 'Mofiqul/dracula.nvim' },
+    { 'rose-pine/neovim',	name = 'rose-pine' }
 })

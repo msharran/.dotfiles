@@ -1,8 +1,12 @@
+-- FZF
+vim.keymap.set('n', '<C-p>', ':Files<cr>', {})
+vim.keymap.set('n', '<C-f>', ':BLines<cr>', {})
+vim.keymap.set('n', '<leader>sw', ':Rg<cr>', {})
+
+-- telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>sgf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>sw', builtin.live_grep, {})
 vim.keymap.set("n", "<leader>sq", "<cmd>Telescope quickfix<cr>")
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>sk', builtin.keymaps, {})
+vim.keymap.set('n', '<leader>sb', builtin.buffers, {})
 vim.keymap.set("n", "<leader>std", "<cmd>TodoTelescope keywords=TODO,FIX<cr>")
