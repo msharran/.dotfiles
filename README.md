@@ -19,6 +19,8 @@ gh repo clone msharran/.dotfiles
 
 ```bash
 cd .dotfiles
+# use ruby version > 3
+bundle install
 ruby install.rb
 ```
 
