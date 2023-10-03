@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -19,35 +19,36 @@ require("lazy").setup({
         lazy = true,
     },
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.2',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    { 'nvim-treesitter/nvim-treesitter',        build = ':TSUpdate' },
     { "nvim-treesitter/nvim-treesitter-context" },
-	{  "theprimeagen/harpoon" },
-	{
-		'stevearc/oil.nvim',
-		opts = {},
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-	{ "mbbill/undotree" },
+    { "theprimeagen/harpoon" },
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    { "mbbill/undotree" },
     {
         'ruifm/gitlinker.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
     },
-	{
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		dependencies = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim'},           -- Optional
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+    {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        dependencies = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },             -- Required
+            { 'williamboman/mason.nvim' },           -- Optional
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},     -- Required
-			{'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },     -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
         }
     },
     { "github/copilot.vim" },
@@ -66,7 +67,7 @@ require("lazy").setup({
     },
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons'}
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     { "fatih/vim-go" },
     { "sotte/presenting.vim" },
@@ -81,6 +82,14 @@ require("lazy").setup({
     { "christoomey/vim-tmux-navigator" },
     { "junegunn/fzf.vim" },
     { "junegunn/fzf" },
+    { "lewis6991/gitsigns.nvim" },
+    { "ThePrimeagen/git-worktree.nvim" },
+    { "fladson/vim-kitty" },
     -- themes
-    { 'rose-pine/neovim',	name = 'rose-pine' }
+    { 'rose-pine/neovim',              name = 'rose-pine' },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+    }
 })

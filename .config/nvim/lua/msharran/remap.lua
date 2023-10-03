@@ -29,6 +29,6 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 -- remap vim-go test functions
-vim.keymap.set("n", "<leader>tf", "<cmd>GoTestFile<CR>")
-vim.keymap.set("n", "<leader>tfu", "<cmd>GoTestFunc<CR>")
+vim.keymap.set("n", "<leader>t", "<cmd>GoTestFile<CR>")
+vim.keymap.set("n", "<leader>tf", "<cmd>GoTestFunc<CR>")
 vim.keymap.set("n", "<leader>tc", "<cmd>GoCoverageToggle<CR>")

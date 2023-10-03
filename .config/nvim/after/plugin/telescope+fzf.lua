@@ -1,6 +1,6 @@
 -- FZF
 vim.keymap.set('n', '<C-p>', ':Files<cr>', {})
-vim.keymap.set('n', '<C-f>', ':BLines<cr>', {})
+vim.keymap.set('n', '<leader>sl', ':BLines<cr>', {})
 vim.keymap.set('n', '<leader>sw', ':Rg<cr>', {})
 
 -- telescope

@@ -225,9 +225,6 @@ export PATH="$PATH:/Users/sharranm/.local/bin"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-alias vim='nvim'
-export EDITOR='nvim'
-
 # FZF configuration
 
 # exit with error if fd is not installed
@@ -240,11 +237,20 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
-export FZF_DEFAULT_OPTS="--border"
+# export FZF_DEFAULT_OPTS="--border --height 60% --layout=reverse"
 
-vf() {
-    select=$(fzf)
-    if [[ -n $select ]]; then
-        vim $select
+# Vim configuration
+alias vim='nvim'
+export EDITOR='nvim'
+vi() {
+    if [[ -n $1 ]]; then
+        vim $1
+    else
+        local select=$(fzf)
+        if [[ -n $select ]]; then
+            vim $select
+        fi
     fi
 }
+
+eval "$(zoxide init zsh)"
