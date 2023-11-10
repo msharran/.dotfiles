@@ -42,3 +42,8 @@ killport() {
     echo "killing port with command...\nfuser -k $1/tcp"
     fuser -k $1/tcp
 }
+
+javals() {
+    /usr/libexec/java_home -V
+}
+

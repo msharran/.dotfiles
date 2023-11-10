@@ -23,18 +23,19 @@ require("lazy").setup({
         tag = '0.1.2',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    { 'nvim-treesitter/nvim-treesitter',        build = ':TSUpdate' },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    { 'nvim-treesitter/nvim-treesitter',          build = ':TSUpdate' },
     { "nvim-treesitter/nvim-treesitter-context" },
     { "theprimeagen/harpoon" },
-    {
-        'stevearc/oil.nvim',
-        opts = {},
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
     { "mbbill/undotree" },
     {
         'ruifm/gitlinker.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
+    },
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -55,11 +56,6 @@ require("lazy").setup({
     {
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        },
     },
     {
         'numToStr/Comment.nvim',
@@ -80,16 +76,20 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     { "christoomey/vim-tmux-navigator" },
-    { "junegunn/fzf.vim" },
-    { "junegunn/fzf" },
     { "lewis6991/gitsigns.nvim" },
     { "ThePrimeagen/git-worktree.nvim" },
-    { "fladson/vim-kitty" },
-    -- themes
-    { 'rose-pine/neovim',              name = 'rose-pine' },
+    { "tpope/vim-repeat" },
+    { "tpope/vim-surround" },
+    { "ThePrimeagen/vim-be-good" },
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
-    }
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "cd app && yarn install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown", "md" },
+    },
+    -- themes
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 })

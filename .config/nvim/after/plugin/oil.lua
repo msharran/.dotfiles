@@ -24,20 +24,22 @@ require("oil").setup({
     spell = false,
     list = false,
     conceallevel = 3,
-    concealcursor = "n",
+    concealcursor = "nvic",
   },
-  -- Restore window options to previous values when leaving an oil buffer
-  restore_win_options = true,
-  -- Skip the confirmation popup for simple operations
-  skip_confirm_for_simple_edits = false,
-  -- Deleted files will be removed with the trash_command (below).
+  -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
   delete_to_trash = false,
+  -- Skip the confirmation popup for simple operations
+  skip_confirm_for_simple_edits = true,
   -- Change this to customize the command used when deleting to trash
   trash_command = "trash-put",
   -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
   prompt_save_on_select_new_entry = true,
+  -- Oil will automatically delete hidden buffers after this delay
+  -- You can set the delay to false to disable cleanup entirely
+  -- Note that the cleanup process only starts when none of the oil buffers are currently displayed
+  cleanup_delay_ms = 2000,
   -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
-  -- options with a `callback` (e.g. { callback = function() ... end, desc = "", nowait = true })
+  -- options with a `callback` (e.g. { callback = function() ... end, desc = "", mode = "n" })
   -- Additionally, if it is a string that matches "actions.<name>",
   -- it will use the mapping at require("oil.actions").<name>
   -- Set to `false` to remove a keymap
@@ -56,13 +58,14 @@ require("oil").setup({
     ["`"] = "actions.cd",
     ["~"] = "actions.tcd",
     ["gs"] = "actions.change_sort",
+    ["gx"] = "actions.open_external",
     ["g."] = "actions.toggle_hidden",
   },
   -- Set to false to disable all of the above keymaps
   use_default_keymaps = true,
   view_options = {
     -- Show files and directories that start with "."
-    show_hidden = false,
+    show_hidden = true,
     -- This function defines what is considered a "hidden" file
     is_hidden_file = function(name, bufnr)
       return vim.startswith(name, ".")

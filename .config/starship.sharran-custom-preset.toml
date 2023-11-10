@@ -8,7 +8,7 @@ disabled = true
 disabled = true
 
 [kubernetes]
-format = '[⛵ $context \($namespace\)](bold blue) '
+format = '[⛵ $context/$namespace](bold blue) '
 disabled = false
 [kubernetes.context_aliases]
 'dev.local.cluster.k8s' = 'dev'
@@ -18,23 +18,26 @@ disabled = false
 'dev.local.cluster.k8s' = 'dev'
 'root/.*' = 'root'
 
-[terraform]
-format = '[tf $workspace]($style) '
-
 [golang]
-symbol = ' '
-format = '[$symbol($version )]($style)'
+disabled = true
 
-[env_var.AWS_OKTA_PROFILE]
-default = ''
-format = '[$env_value]($style) '
+# [env_var.AWS_OKTA_PROFILE]
+# default = ''
+# format = '[$env_value]($style) '
 
 [aws]
-format = 'on [$symbol($profile )(\($region\) )]($style)'
-symbol = 'aws '
+format = '[$symbol($profile/$region)]($style) '
+symbol = ' '
+[aws.region_aliases]
+ap-south-1 = 'mum'
+ap-south-2 = 'hyd'
 
 [container]
+disabled = true
 format = '[$symbol \[$name\]]($style) '
+
+[docker_context]
+disabled = true
 
 # [git_branch]
 # truncation_length = 25
