@@ -62,6 +62,10 @@ require("lazy").setup({
     { "zbirenbaum/copilot.lua" },
     { 'AndreM222/copilot-lualine' },
     {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    {
         'numToStr/Comment.nvim',
         lazy = false,
     },
