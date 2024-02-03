@@ -1,12 +1,5 @@
 ### FUNCTIONS
 
-sshaddkeys() {
-  ssh-add ~/.ssh/id_rsa
-  ssh-add ~/.ssh/id_rsa_happay
-  cd ~/.ssh/ssh-keys
-  ssh-add -v --apple-use-keychain $(ls | grep -v .pub)
-}
-
 whichaws() {
   cat ~/.aws/config | grep -B1 $1
 }

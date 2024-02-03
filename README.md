@@ -1,6 +1,6 @@
 # .dotfiles
 
-## Installation
+### Installation
 
 To install all the required dependent packages
 like neovim, fzf etc, run the `install.rb`
@@ -26,7 +26,7 @@ ruby install.rb
 
 --- 
 
-> Skip if above worked
+**Skip if above worked**
 
 ## Manual Installation 
 

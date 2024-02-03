@@ -7,7 +7,7 @@ done
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME="robbyrussell" # set by `omz`
+ZSH_THEME="fishy" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -69,8 +69,7 @@ ZSH_THEME="robbyrussell" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git kubectl zsh-autosuggestions zsh-kubectl-prompt)
-
+plugins=(git kubectl zsh-autosuggestions aws pass)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,3 +97,7 @@ source $ZSH/oh-my-zsh.sh
 for file in $HOME/.config/msharran/end-*.bash; do
     source $file
 done
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/sharranm/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

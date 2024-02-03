@@ -33,4 +33,5 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- remap vim-go test functions
 vim.keymap.set("n", "<leader>t", "<cmd>GoTestFile<CR>")
 vim.keymap.set("n", "<leader>tf", "<cmd>GoTestFunc<CR>")
-vim.keymap.set("n", "<leader>tc", "<cmd>GoCoverageToggle<CR>")
+
+vim.keymap.set("n", "<leader>tc", ":setlocal <C-R>=&conceallevel ? 'conceallevel=0' : 'conceallevel=3'<CR><CR>", { desc = "[T]oggle [C]onceallevel"} )

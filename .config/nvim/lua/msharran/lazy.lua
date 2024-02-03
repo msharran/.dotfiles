@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup({
+    { "chentoast/marks.nvim" },
     {
         "folke/which-key.nvim",
         lazy = true,
@@ -22,9 +23,15 @@ require("lazy").setup({
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',
         dependencies = { 'nvim-lua/plenary.nvim' }
-    },
+    }, -- only using telescope for git worktree plugin extension. Have to replace with fzf
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     { 'nvim-treesitter/nvim-treesitter',          build = ':TSUpdate' },
+    {
+        "ibhagwan/fzf-lua",
+        -- optional for icon support
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    { "junegunn/fzf", build = "./install --bin" },
     { "nvim-treesitter/nvim-treesitter-context" },
     { "theprimeagen/harpoon" },
     { "mbbill/undotree" },
@@ -49,10 +56,11 @@ require("lazy").setup({
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' },     -- Required
+            { 'L3MON4D3/LuaSnip', version = "v2.*" },     -- Required
         }
     },
-    { "github/copilot.vim" },
+    { "zbirenbaum/copilot.lua" },
+    { 'AndreM222/copilot-lualine' },
     {
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -66,7 +74,6 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     { "fatih/vim-go" },
-    { "sotte/presenting.vim" },
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -81,15 +88,8 @@ require("lazy").setup({
     { "tpope/vim-repeat" },
     { "tpope/vim-surround" },
     { "ThePrimeagen/vim-be-good" },
-    {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        build = "cd app && yarn install",
-        init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
-        ft = { "markdown", "md" },
-    },
+    { "ixru/nvim-markdown" },
+    { "sotte/presenting.nvim" },
     -- themes
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+    { 'rose-pine/neovim', name = 'rose-pine' }
 })
