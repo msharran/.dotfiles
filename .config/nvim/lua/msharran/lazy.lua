@@ -14,4 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Make sure to set `mapleader` before lazy so your mappings are correct
 vim.g.mapleader = " "
 
-require("lazy").setup("msharran.plugins")
+require("lazy").setup({
+    spec ="msharran.plugins",
+    change_detection = { notify = false }
+})
