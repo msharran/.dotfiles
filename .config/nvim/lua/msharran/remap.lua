@@ -33,5 +33,3 @@ vim.keymap.set("n", "<leader>t", "<cmd>GoTestFile<CR>")
 vim.keymap.set("n", "<leader>tf", "<cmd>GoTestFunc<CR>")
 
 vim.keymap.set("n", "<leader>tc", ":setlocal <C-R>=&conceallevel ? 'conceallevel=0' : 'conceallevel=3'<CR><CR>", { desc = "[T]oggle [C]onceallevel"} )
-
-vim.keymap.set("n", "-", "<cmd>Ex<CR>")

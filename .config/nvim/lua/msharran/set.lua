@@ -46,14 +46,3 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
--- fold configuratons
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-local autoCommands = {
-    -- other autocommands
-    open_folds = {
-        {"BufReadPost,FileReadPost", "*", "normal zR"}
-    },
-}
-
-M.nvim_create_augroups(autoCommands)

@@ -16,10 +16,10 @@ return {
 
             -- vim.keymap.set("n", "<C-p>","<cmd>lua require('fzf-lua').git_files({ cmd = 'git ls-files --exclude-standard --cached --others' })<CR>" , { silent = true })
             vim.keymap.set("n", "<C-p>","<cmd>:FZF<CR>" , { silent = true })
-            vim.keymap.set("n", "<leader>fw", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true })
-            vim.keymap.set("n", "<leader>fl", "<cmd>lua require('fzf-lua').blines()<CR>", { silent = true })
-            vim.keymap.set("n", "<leader>fm", "<cmd>lua require('fzf-lua').man_pages()<CR>", { silent = true })
-
+            vim.keymap.set("n", "<leader>st", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>sl", "<cmd>lua require('fzf-lua').blines()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>sm", "<cmd>lua require('fzf-lua').man_pages()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>ss", "<cmd>lua require('fzf-lua').lsp_live_workspace_symbols()<CR>", { silent = true })
         end
     },
 }
