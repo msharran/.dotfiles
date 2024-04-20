@@ -5,9 +5,9 @@ return {
         config = function()
             require('lualine').setup({
                 options = {
-                    theme = 'auto',
+                    theme = 'gruvbox',
                     component_separators = " ",
-                    -- section_separators = { left = "", right = "" },
+                    section_separators = { left = "", right = "" },
                 },
                 sections = {
                     lualine_c = {
@@ -43,11 +43,17 @@ return {
                                         unknown = " "
                                     },
                                     hl = {
-                                        enabled = "#50FA7B",
-                                        sleep = "#AEB7D0",
-                                        disabled = "#6272A4",
-                                        warning = "#FFB86C",
-                                        unknown = "#FF5555"
+                                        -- enabled = "#50FA7B",
+                                        -- sleep = "#AEB7D0",
+                                        -- disabled = "#6272A4",
+                                        -- warning = "#FFB86C",
+                                        -- unknown = "#FF5555"
+                                        -- use colors from gruvbox
+                                        enabled = "#8F3F71",
+                                        sleep = "#8F3F71",
+                                        disabled = "#8F3F71",
+                                        warning = "#8F3F71",
+                                        unknown = "#8F3F71"
                                     }
                                 },
                                 spinners = require("copilot-lualine.spinners").dots,

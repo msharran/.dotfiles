@@ -1,40 +1,11 @@
 return {
-    { 
-        "ThePrimeagen/git-worktree.nvim",
+    {
+        "tpope/vim-fugitive",
         config = function()
-            require("git-worktree").setup({})
-            require("telescope").load_extension("git_worktree")
-
-            vim.keymap.set('n', '<leader>ga', function()
-                require('telescope').extensions.git_worktree.create_git_worktree()
-            end)
-
-
-            vim.keymap.set('n', '<leader>gs', function()
-                -- <Enter> - switches to that worktree
-                -- <c-d> - deletes that worktree
-                -- <c-f> - toggles forcing of the next deletion
-                require('telescope').extensions.git_worktree.git_worktrees()
-            end)
-
-
-            -- Print info
-            local Worktree = require("git-worktree")
-            Worktree.on_tree_change(function(op, metadata)
-                if op == Worktree.Operations.Switch then
-                    print("Switched from " .. metadata.prev_path .. " to " .. metadata.path)
-                end
-            end)
-        end,
-        dependencies = {
-            {
-                'nvim-telescope/telescope.nvim',
-                tag = '0.1.2',
-                dependencies = { 'nvim-lua/plenary.nvim' }
-            }, -- only using telescope for git worktree plugin extension. Have to replace with fzf
-        }
+            vim.keymap.set("n", "<C-g>","<cmd>:tab Git<CR>")
+        end
     },
-    { 
+    {
         "lewis6991/gitsigns.nvim",
         config = function()
             require('gitsigns').setup({

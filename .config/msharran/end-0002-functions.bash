@@ -32,11 +32,24 @@ assume_role() {
 }
 
 killport() {
-    echo "killing port with command...\nfuser -k $1/tcp"
-    fuser -k $1/tcp
+    # $1 port
+    # $2 proto supported by /etc/protocols (Optional)
+    
+    if [ -z "$2" ]; then
+        proto="tcp"
+    else
+        proto="$2"
+    fi
+
+    pid="$(lsof -i $proto:$1 -s $proto:LISTEN | tail -1 | awk '{print $2}')"
+    if [ -z "$pid" ]; then
+        echo "No process on port $1" >&2
+    else
+        echo "Killing process $pid on port $1"
+        kill $pid
+    fi
 }
 
-javals() {
+java_ls() {
     /usr/libexec/java_home -V
 }
-

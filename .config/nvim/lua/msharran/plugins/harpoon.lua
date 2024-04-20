@@ -1,3 +1,7 @@
+function display_selection()
+    print("switched: " .. vim.fn.expand("%"))
+end
+
 return {
     {
         "theprimeagen/harpoon",
@@ -10,19 +14,19 @@ return {
 
             vim.keymap.set("n", "<C-e>", function()
                 ui.nav_file(1)
-                print("harpoon 1")
+                display_selection()
             end)
             vim.keymap.set("n", "<C-f>", function()
                 ui.nav_file(2)
-                print("harpoon 2")
+                display_selection()
             end)
             vim.keymap.set("n", "<C-n>", function()
                 ui.nav_file(3)
-                print("harpoon 3")
+                display_selection()
             end)
             vim.keymap.set("n", "<C-m>", function()
                 ui.nav_file(4)
-                print("harpoon 4")
+                display_selection()
             end)
         end
     }
