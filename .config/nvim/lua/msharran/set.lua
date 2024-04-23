@@ -45,3 +45,6 @@ vim.filetype.add({
         templ = "templ",
     },
 })
+
+-- set rg as grepprg
+vim.opt.grepprg = "rg --hidden --vimgrep"
