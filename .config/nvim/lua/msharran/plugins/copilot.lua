@@ -8,12 +8,12 @@ return {
                     auto_trigger = true,
                     debounce = 75,
                     keymap = {
-                        accept = "<leader>l",
+                        accept = "<M-y>",
                         accept_word = false,
                         accept_line = false,
                         next = "<M-]>",
                         prev = "<M-[>",
-                        dismiss = "<leader>h",
+                        dismiss = "<M-n>",
                     },
                 },
                 filetypes = {
