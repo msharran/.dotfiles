@@ -47,4 +47,4 @@ vim.filetype.add({
 })
 
 -- set rg as grepprg
-vim.opt.grepprg = "rg --hidden --vimgrep"
+vim.opt.grepprg = "rg --hidden --vimgrep --glob '!{.git,node_modules}/*'"
