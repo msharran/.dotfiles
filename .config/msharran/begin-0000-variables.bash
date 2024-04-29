@@ -18,9 +18,6 @@ export PATH=$PATH:$HOME/.npm-global/bin
 
 export NOTES="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 # List all java versions using `/usr/libexec/java_home -V`
 # Java 11
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)

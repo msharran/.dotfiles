@@ -1,10 +1,11 @@
 function display_selection()
-    print("switched: " .. vim.fn.expand("%"))
+    print("\"" .. vim.fn.expand("%") .. "\"" .. " selected")
 end
 
 return {
     {
         "theprimeagen/harpoon",
+        dependencies = { { "nvim-lua/plenary.nvim" } },
         config = function()
             local mark = require("harpoon.mark")
             local ui = require("harpoon.ui")

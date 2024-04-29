@@ -3,7 +3,8 @@ return {
         "tpope/vim-fugitive",
         config = function()
             vim.keymap.set("n", "<leader>gs","<cmd>:tab Git<CR>")
-        end
+        end,
+        dependencies = "tpope/vim-rhubarb" -- :GBrowse GitHub support
     },
     {
         "lewis6991/gitsigns.nvim",
@@ -40,17 +41,6 @@ return {
                     map('n', '<leader>gd', gs.toggle_deleted)
                 end
             })
-        end
-    },
-    {
-        'ruifm/gitlinker.nvim',
-        dependencies = 'nvim-lua/plenary.nvim',
-        config = function()
-            require("gitlinker").setup({})
-
-            vim.api.nvim_set_keymap('n', '<leader>gb', '<cmd>lua require"gitlinker".get_buf_range_url("n", {action_callback = require"gitlinker.actions".open_in_browser})<cr>', {silent = true})
-            vim.api.nvim_set_keymap('n', '<leader>gY', '<cmd>lua require"gitlinker".get_repo_url()<cr>', {silent = true})
-            vim.api.nvim_set_keymap('n', '<leader>gB', '<cmd>lua require"gitlinker".get_repo_url({action_callback = require"gitlinker.actions".open_in_browser})<cr>', {silent = true})
         end
     },
 }

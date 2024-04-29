@@ -16,14 +16,15 @@ autocmd('LspAttach', {
         -- v stands for vim
         vim.keymap.set("n", "<leader>vw", function() vim.lsp.buf.workspace_symbol() end, opts)
         vim.keymap.set("n", "<leader>vd", "<cmd>:Trouble document_diagnostics<cr>", opts)
-        vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-        vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+        vim.keymap.set("n", "<leader>vr", function() vim.lsp.buf.rename() end, opts)
+        vim.keymap.set("n", "<leader>va", function() vim.lsp.buf.code_action() end, opts)
     end
 })
 
 
 return {
     { "fatih/vim-go" },
+    { "mattn/emmet-vim" },
     { "SirVer/ultisnips" },
     {
         "neovim/nvim-lspconfig",
@@ -91,9 +92,9 @@ return {
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-                    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                    ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+                    ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+                    ['<CR>'] = cmp.mapping.confirm({ select = true }),
                     ["<C-Space>"] = cmp.mapping.complete(),
                 }),
                 sources = cmp.config.sources({
