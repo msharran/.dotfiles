@@ -46,7 +46,7 @@ killport() {
         echo "No process on port $1" >&2
     else
         echo "Killing process $pid on port $1"
-        kill $pid
+        kill -9 $pid
     fi
 }
 

@@ -5,3 +5,5 @@ Makefile
 Gemfile.*
 .*\.rb
 Installfile
+.*\.terminfo
+.*\.bkp

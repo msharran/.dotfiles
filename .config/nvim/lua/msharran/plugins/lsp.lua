@@ -46,14 +46,6 @@ function setupcopilot()
 
     vim.keymap.set("n", "<leader>cs", [[:Copilot status<CR>]])
     vim.keymap.set("n", "<leader>cp", [[:Copilot panel<CR>]])
-
-    -- copilot-cmp
-    require("copilot_cmp").setup()
-    require("cmp").setup.buffer({
-        sources = {
-            { name = "copilot" },
-        },
-    })
 end
 
 return {
@@ -76,10 +68,10 @@ return {
             "onsails/lspkind.nvim",
             -- copilot
             "zbirenbaum/copilot.lua",
-            "zbirenbaum/copilot-cmp",
         },
 
         config = function()
+            setupcopilot()
             local cmp = require('cmp')
             local cmp_lsp = require("cmp_nvim_lsp")
             local lspkind = require('lspkind')
@@ -95,7 +87,9 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "rust_analyzer",
-                    "tsserver",
+                    "gopls",
+                    "solargraph",
+                    "rubocop"
                 },
                 handlers = {
                     function(server_name) -- default handler (optional)
@@ -134,9 +128,7 @@ return {
                     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                     ["<C-Space>"] = cmp.mapping.complete(),
                 }),
-                -- ordered by priority
                 sources = cmp.config.sources({
-                    -- { name = "copilot",                group_index = 2 },
                     { name = "nvim_lsp",               keyword_length = 1 },
                     { name = "nvim_lsp_signature_help" },
                     { name = "luasnip" },
@@ -145,6 +137,7 @@ return {
                 }, {
                     { name = 'buffer' },
                 }),
+                -- ordered by priority
                 formatting = {
                     format = lspkind.cmp_format({
                         mode = "symbol",
@@ -165,7 +158,6 @@ return {
                 },
             })
 
-            setupcopilot()
         end
     }
 }
