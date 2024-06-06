@@ -35,4 +35,10 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 # Linkerd
 export PATH=$PATH:/Users/sharranm/.linkerd2/bin
 
+# XDG_CONFIG_HOME
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# C 
+# Add homebrew C headers and libs to compiler paths (for both gcc and clang)
+# export CPATH="$(brew --prefix)/include:$CPATH"
+# export LIBRARY_PATH="$(brew --prefix)/lib:$LIBRARY_PATH"

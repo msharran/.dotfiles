@@ -1,20 +1,5 @@
 #!/bin/bash
 
-# cat > $DST_DIR/$DST_FILE <<<EOF
-# ---
-# name: work/caterpillar
-# windows:
-#   - tabs:
-#       - title: editor
-#         layout:
-#           cwd: /Users/sharranm/projects/work/caterpillar
-#           commands:
-#             - exec: v
-#       - title: editor
-#         layout:
-#           cwd: /Users/sharranm/projects/work/caterpillar
-# EOF
-
 projects=$(fd . $HOME/projects/work $HOME/projects/play $HOME/projects/play/labs -d 1 --type directory)
 
 for p in $projects; do
@@ -36,7 +21,7 @@ windows:
         layout:
           cwd: $p 
           commands:
-            - exec: v
+            - exec: vim .
       - title: editor
         layout:
           cwd: $p
