@@ -38,6 +38,8 @@ export PATH=$PATH:/Users/sharranm/.linkerd2/bin
 # XDG_CONFIG_HOME
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export BAT_THEME="Catppuccin%20Mocha"
+
 # C 
 # Add homebrew C headers and libs to compiler paths (for both gcc and clang)
 # export CPATH="$(brew --prefix)/include:$CPATH"
