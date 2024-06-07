@@ -1,0 +1,21 @@
+import = [
+    "~/.config/alacritty/catppuccin-mocha.toml",
+    "~/.config/alacritty/keybindings.toml",
+]
+
+[shell]
+program = "/bin/zsh"
+args = ["-l"]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+option_as_alt = "Both" # (macos only)
+decorations = "none"
+dynamic_padding = true
+
+[font]
+normal = { family = "SauceCodePro Nerd Font Mono", style = "Regular" }
+# normal = {family = "FiraCode Nerd Font", style = "Regular"}
+size = 14.25

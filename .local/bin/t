@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Usage: t <optional zoxide-like dir, relative or absolute path>
-# If no argument is given, a combination of existing sessions and a zoxide query will be displayed in a FZF
+# Usage: t <optional dir, relative or absolute path>
 
 list_projects() {
-    fd . $HOME/projects $HOME/projects/work $HOME/projects/play $HOME/projects/play/labs $HOME -d 1 --type directory --hidden
+    # fd . $HOME/projects $HOME/projects/work $HOME/projects/play $HOME/projects/play/labs $HOME -d 1 --type directory --hidden
+    find $HOME/projects $HOME/projects/work $HOME/projects/play $HOME/projects/play/labs $HOME -mindepth 1 -maxdepth 1 -type d
 }
 
 # Parse optional argument
@@ -16,7 +16,7 @@ else
     RESULT=$(list_projects | fzf)
     if [ -z "$RESULT" ]; then
         echo "No projects selected"
-        exit 0
+        exit 1
     fi
 fi
 
