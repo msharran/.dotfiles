@@ -1,2 +1,5 @@
-[keyboard]
-bindings = [{ key = "Space", mods = "Shift", action = "ToggleViMode" }]
+# [keyboard]
+#
+# bindings = [
+#     { key = "Space", mods = "Shift", action = "ToggleViMode" },
+# ]
