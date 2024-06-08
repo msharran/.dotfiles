@@ -1,4 +1,4 @@
-for file in $HOME/.config/msharran/begin-*.bash; do
+for file in $HOME/.config/zsh/begin-*.sh; do
     source $file
 done
 
@@ -95,6 +95,6 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-for file in $HOME/.config/msharran/end-*.bash; do
+for file in $HOME/.config/zsh/end-*.sh; do
     source $file
 done
