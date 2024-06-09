@@ -19,7 +19,5 @@ blur = true
 
 [font]
 # Mono font's have smaller icons, so avoid them
-normal = { family = "SauceCodePro Nerd Font", style = "Regular" } 
-# normal = { family = "MesloLGS Nerd Font", style = "Regular" }
-# normal = {family = "FiraCode Nerd Font", style = "Regular"}
-size = 14.5
+normal = { family = "MesloLGM Nerd Font", style = "Regular" }
+size = 14
