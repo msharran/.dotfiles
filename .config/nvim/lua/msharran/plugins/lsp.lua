@@ -22,7 +22,7 @@ autocmd('LspAttach', {
     end
 })
 
-local function setupcopilot()
+local function setup_copilot()
     -- copilot
     require('copilot').setup({
         panel = { enabled = true },
@@ -101,7 +101,7 @@ return {
         },
 
         config = function()
-            setupcopilot()
+            setup_copilot()
             local cmp = require('cmp')
             local cmp_lsp = require("cmp_nvim_lsp")
             local lspkind = require('lspkind')
