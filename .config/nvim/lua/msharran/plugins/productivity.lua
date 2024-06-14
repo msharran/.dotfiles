@@ -1,7 +1,3 @@
-local function display_selection()
-    print("\"" .. vim.fn.expand("%") .. "\"" .. " selected")
-end
-
 local function setup_oil()
     require("oil").setup({
         view_options = {
@@ -9,7 +5,7 @@ local function setup_oil()
         },
         columns = {
             "icon",
-            "permissions",
+            -- "permissions",
         },
         delete_to_trash = true,
     })
@@ -20,25 +16,15 @@ local function setup_harpoon()
     local mark = require("harpoon.mark")
     local ui = require("harpoon.ui")
 
-    vim.keymap.set("n", "<leader>a", mark.add_file)
-    vim.keymap.set("n", "<leader>e", ui.toggle_quick_menu)
+    vim.keymap.set("n", "<leader>a", mark.add_file, { desc = "Add file to harpoon" })
+    vim.keymap.set("n", "<leader>e", ui.toggle_quick_menu, { desc = "Toggle harpoon menu" })
 
-    vim.keymap.set("n", "<C-e>", function()
-        ui.nav_file(1)
-        display_selection()
-    end)
-    vim.keymap.set("n", "<C-f>", function()
-        ui.nav_file(2)
-        display_selection()
-    end)
-    vim.keymap.set("n", "<C-b>", function()
-        ui.nav_file(3)
-        display_selection()
-    end)
-    vim.keymap.set("n", "<C-n>", function()
-        ui.nav_file(4)
-        display_selection()
-    end)
+    for i = 1, 9 do
+        vim.keymap.set("n", "<leader>" .. i, function()
+            ui.nav_file(i)
+            print("\"" .. vim.fn.expand("%") .. "\"" .. ", Harpoon " .. i .. " selected")
+        end, { desc = "Harpoon file " .. i })
+    end
 end
 
 local function setup_telescope()
@@ -57,27 +43,22 @@ local function setup_telescope()
 
     -- telescope keymaps
     local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-    vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-    vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-    vim.keymap.set('n', '<leader>fm', builtin.man_pages, {})
-    vim.keymap.set('n', '<leader>fs', builtin.live_grep, {})
-    vim.keymap.set('n', '<leader>fw', function()
-        local word = vim.fn.expand("<cword>")
-        if word == "" then
-            print("No word under cursor")
-            return
-        end
-        builtin.grep_string({ search = word })
-    end)
-    vim.keymap.set('n', '<leader>fW', function()
-        local word = vim.fn.expand("<cWORD>")
-        if word == "" then
-            print("No word under cursor")
-            return
-        end
-        builtin.grep_string({ search = word })
-    end)
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "[F]ind [F]iles" })
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "[F]ind [B]uffers" })
+    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "[F]ind [H]elp tags" })
+    vim.keymap.set('n', '<leader>fm', builtin.man_pages, { desc = "[F]ind [M]an pages" })
+    vim.keymap.set("n", "<leader>ft", "<CMD>TodoTelescope keywords=TODO,FIX,HACK<CR>", { desc = "[F]ind [T]odos" })
+end
+
+local function setup_todo_comment()
+    require("todo-comments").setup()
+    vim.keymap.set("n", "]t", function()
+        require("todo-comments").jump_next({ keywords = { "TODO", "HACK" } })
+    end, { desc = "Next todo comment" })
+
+    vim.keymap.set("n", "[t", function()
+        require("todo-comments").jump_prev({ keywords = { "TODO", "HACK" } })
+    end, { desc = "Previous todo comment" })
 end
 
 return {
@@ -87,33 +68,42 @@ return {
     {
         'stevearc/oil.nvim',
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            setup_oil()
-        end
+        config = setup_oil
     },
     {
         "theprimeagen/harpoon",
         dependencies = { { "nvim-lua/plenary.nvim" } },
-        config = function()
-            setup_harpoon()
-        end
+        config = setup_harpoon
     },
     {
         'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
+        opts = {},
     },
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.6',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+            {
+                "folke/todo-comments.nvim",
+                dependencies = { "nvim-lua/plenary.nvim" },
+                config = setup_todo_comment
+            }
         },
-        config = function() 
-            setup_telescope() 
-        end
+        config = setup_telescope
     },
     { "christoomey/vim-tmux-navigator" },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        config = function()
+            require("which-key").setup()
+            vim.keymap.set("n", "<leader>?", "<CMD>WhichKey<CR>", { desc = "Show which-key" })
+        end
+    },
 }

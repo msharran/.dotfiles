@@ -6,19 +6,29 @@ autocmd('LspAttach', {
     group = msharran_grp,
     callback = function(e)
         local opts = { buffer = e.buf }
-        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-        vim.keymap.set("n", "gR", "<cmd>:Trouble lsp_references<cr>", opts)
-        vim.keymap.set("n", "gI", "<cmd>:Trouble lsp_implementations<cr>", opts)
-        vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end,
+            vim.tbl_extend('force', opts, { desc = "Go to Definition" }))
+        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end,
+            vim.tbl_extend('force', opts, { desc = "Show Hover" }))
+        vim.keymap.set("n", "gR", "<cmd>:Trouble lsp_references<cr>",
+            vim.tbl_extend('force', opts, { desc = "LSP References" }))
+        vim.keymap.set("n", "gI", "<cmd>:Trouble lsp_implementations<cr>",
+            vim.tbl_extend('force', opts, { desc = "LSP Implementations" }))
+        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end,
+            vim.tbl_extend('force', opts, { desc = "Next Diagnostic" }))
+        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end,
+            vim.tbl_extend('force', opts, { desc = "Previous Diagnostic" }))
 
-        -- v stands for vim
-        vim.keymap.set("n", "<leader>vw", function() vim.lsp.buf.workspace_symbol() end, opts)
-        vim.keymap.set("n", "<leader>vd", "<cmd>:Trouble document_diagnostics<cr>", opts)
-        vim.keymap.set("n", "<leader>vr", function() vim.lsp.buf.rename() end, opts)
-        vim.keymap.set("n", "<leader>va", function() vim.lsp.buf.code_action() end, opts)
+        -- l stands for LSP
+        vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { silent = true, desc = "[L]SP [F]ormat Buffer" })
+        vim.keymap.set("n", "<leader>lw", function() vim.lsp.buf.workspace_symbol() end,
+            vim.tbl_extend('force', opts, { desc = "[L]SP [W]orkspace Symbol" }))
+        vim.keymap.set("n", "<leader>ld", "<cmd>:Trouble document_diagnostics<cr>",
+            vim.tbl_extend('force', opts, { desc = "[L]SP [D]ocument diagnostics" }))
+        vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end,
+            vim.tbl_extend('force', opts, { desc = "[L]SP [R]ename" }))
+        vim.keymap.set("n", "<leader>lc", function() vim.lsp.buf.code_action() end,
+            vim.tbl_extend('force', opts, { desc = "[L]SP [C]ode Action" }))
     end
 })
 
@@ -187,7 +197,6 @@ return {
                     prefix = "",
                 },
             })
-
         end
     }
 }
