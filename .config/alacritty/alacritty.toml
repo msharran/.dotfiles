@@ -19,6 +19,7 @@ blur = true
 
 [font]
 # Mono font's have smaller icons, so avoid them
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+normal = { family = "MesloLGM Nerd Font", style = "Regular" }
+# normal = { family = "Hack Nerd Font", style = "Regular" }
+# normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 size = 15
-offset.y = 2

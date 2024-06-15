@@ -11,13 +11,7 @@ vim.keymap.set("n", "Q", ":noh<CR>", { desc = "Clear highlights" })
 vim.keymap.set("n", "<leader>w", ":w<CR>" , { desc = "Save file" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make file executable" })
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Find and Replace word under cursor" })
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]eplace word in buffer" })
 
--- grep
-vim.keymap.set("n", "<leader>fw", [[:grep -w <C-r><C-w><CR><Esc>:cw<CR>]], { desc = "[F]ind [W]ord under cursor" })
-vim.keymap.set("n", "<leader>fW", [[:grep -i -w <C-r><C-w><CR><Esc>:cw<CR>]], { desc = "[F]ind [W]ord under cursor (insensitive)" })
-vim.keymap.set("n", "<leader>fs", [[:grep ]] , { desc = "[F]ind [S]tring" })
-vim.keymap.set("n", "<leader>fS", [[:grep -i ]], { desc = "[F]ind [S]tring (insensitive)" })
-
---quickfix
+-- quickfix
 vim.keymap.set("n", "<leader>q", ":copen<CR>", { desc = "Open quickfix" })
