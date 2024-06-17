@@ -7,10 +7,10 @@ require('lualine').setup({
         always_divide_middle = true
     },
     inactive_winbar = {
-        lualine_c = { 'filename' },
+        lualine_x = { { 'filename', path = 3 } },
     },
     winbar = {
-        lualine_c = { 'filename' },
+        lualine_x = { { 'filename', path = 3 } },
     },
     inactive_sections = {
         lualine_c = {}, -- disable the filename in inactive windows to show in winbar
@@ -18,7 +18,7 @@ require('lualine').setup({
     sections = {
         -- left
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff' , 'diagnostics' },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {
             {
                 'copilot',
