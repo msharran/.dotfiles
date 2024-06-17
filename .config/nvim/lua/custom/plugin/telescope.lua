@@ -8,7 +8,7 @@ return {
             { "folke/todo-comments.nvim" }
         },
         config = function()
-            require("custom.setup_telescope")
+            require("custom.setup.telescope")
         end
     },
 }

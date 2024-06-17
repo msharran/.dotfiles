@@ -3,25 +3,30 @@ require('lualine').setup({
         theme = 'auto',
         section_separators = { left = "", right = "" },
         icons_enabled = true,
-        component_separators = { left = '|', right = '|' },
+        component_separators = { left = '', right = '' },
         always_divide_middle = true
+    },
+    inactive_winbar = {
+        lualine_c = { 'filename' },
+    },
+    winbar = {
+        lualine_c = { 'filename' },
+    },
+    inactive_sections = {
+        lualine_c = {}, -- disable the filename in inactive windows to show in winbar
     },
     sections = {
         -- left
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename' },
-
-        -- right
-        lualine_x = {
+        lualine_b = { 'branch', 'diff' , 'diagnostics' },
+        lualine_c = {
             {
                 'copilot',
-                -- Default values
                 symbols = {
                     status = {
                         icons = {
                             enabled = " ",
-                            sleep = " ", -- auto-trigger disabled
+                            sleep = " ",
                             disabled = " ",
                             warning = " ",
                             unknown = " "
@@ -40,7 +45,8 @@ require('lualine').setup({
                 show_colors = true,
                 show_loading = true
             },
-            'encoding', 'fileformat', 'filetype' },
+        },
+        lualine_x = { 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
     },

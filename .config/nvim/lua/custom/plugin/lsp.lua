@@ -15,7 +15,7 @@ return {
             { 'folke/neodev.nvim',                      opts = {} },
         },
         config = function()
-            require("custom.setup_lsp")
+            require("custom.setup.lsp")
         end
     }
 }

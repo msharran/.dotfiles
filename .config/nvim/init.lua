@@ -13,8 +13,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Set up lazy, and load my `lua/custom/plugins/` folder
-require("lazy").setup({ import = "custom/plugins" }, {
+-- Set up lazy, and load my `lua/custom/plugin/` folder
+require("lazy").setup({ import = "custom/plugin" }, {
     change_detection = {
         notify = false,
     },

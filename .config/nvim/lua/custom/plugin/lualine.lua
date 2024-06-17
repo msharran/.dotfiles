@@ -6,7 +6,7 @@ return {
             { 'AndreM222/copilot-lualine', opt = {} },
         },
         config = function()
-            require("custom.setup_lualine")
+            require("custom.setup.lualine")
         end
     },
 }

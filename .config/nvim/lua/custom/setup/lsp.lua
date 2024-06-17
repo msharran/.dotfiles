@@ -27,23 +27,33 @@ vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp_keymaps', {}),
     callback = function(e)
         local opts = { buffer = e.buf }
-        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, vim.tbl_extend('force', opts, { desc = "Go to Definition" }))
-        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, vim.tbl_extend('force', opts, { desc = "Show Hover" }))
-        vim.keymap.set("n", "gr", "<cmd>:Telescope lsp_references<cr>", vim.tbl_extend('force', opts, { desc = "LSP References" }))
-        vim.keymap.set("n", "gI", "<cmd>:Telescope lsp_implementations<cr>", vim.tbl_extend('force', opts, { desc = "LSP Implementations" }))
-        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, vim.tbl_extend('force', opts, { desc = "Next Diagnostic" }))
-        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, vim.tbl_extend('force', opts, { desc = "Previous Diagnostic" }))
+        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end,
+            vim.tbl_extend('force', opts, { desc = "Go to Definition" }))
+        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end,
+            vim.tbl_extend('force', opts, { desc = "Show Hover" }))
+        vim.keymap.set("n", "gr", "<cmd>:Telescope lsp_references<cr>",
+            vim.tbl_extend('force', opts, { desc = "LSP References" }))
+        vim.keymap.set("n", "gI", "<cmd>:Telescope lsp_implementations<cr>",
+            vim.tbl_extend('force', opts, { desc = "LSP Implementations" }))
+        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end,
+            vim.tbl_extend('force', opts, { desc = "Next Diagnostic" }))
+        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end,
+            vim.tbl_extend('force', opts, { desc = "Previous Diagnostic" }))
 
         -- l stands for LSP
         vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { silent = true, desc = "[L]SP [F]ormat Buffer" })
-        vim.keymap.set("n", "<leader>lws", function() vim.lsp.buf.workspace_symbol() end, vim.tbl_extend('force', opts, { desc = "[L]SP [W]orkspace [S]ymbol" }))
-        vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end, vim.tbl_extend('force', opts, { desc = "[L]SP [R]ename" }))
-        vim.keymap.set("n", "<leader>lca", function() vim.lsp.buf.code_action() end, vim.tbl_extend('force', opts, { desc = "[L]SP [C]ode [A]ction" }))
+        vim.keymap.set("n", "<leader>lws", function() vim.lsp.buf.workspace_symbol() end,
+            vim.tbl_extend('force', opts, { desc = "[L]SP [W]orkspace [S]ymbol" }))
+        vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end,
+            vim.tbl_extend('force', opts, { desc = "[L]SP [R]ename" }))
+        vim.keymap.set("n", "<leader>lca", function() vim.lsp.buf.code_action() end,
+            vim.tbl_extend('force', opts, { desc = "[L]SP [C]ode [A]ction" }))
     end
 })
 
 -- Setup NVIM LSP
-local capabilities = vim.tbl_deep_extend("force" ,{} ,
+local lspconfig = require("lspconfig")
+local capabilities = vim.tbl_deep_extend("force", {},
     vim.lsp.protocol.make_client_capabilities(),
     require("cmp_nvim_lsp").default_capabilities()
 )
@@ -59,12 +69,11 @@ require("mason-lspconfig").setup({
     },
     handlers = {
         function(server_name) -- default handler (optional)
-            require("lspconfig")[server_name].setup {
+            lspconfig[server_name].setup {
                 capabilities = capabilities
             }
         end,
         ["lua_ls"] = function()
-            local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup {
                 capabilities = capabilities,
                 settings = {
@@ -76,8 +85,23 @@ require("mason-lspconfig").setup({
                 }
             }
         end,
+        -- Setup golang
+        ["gopls"] = function()
+            lspconfig.gopls.setup {
+                capabilities = capabilities,
+                settings = {
+                    gopls = {
+                        analyses = {
+                            unusedparams = true,
+                        },
+                        staticcheck = true,
+                    },
+                },
+            }
+        end
     }
 })
+
 
 vim.diagnostic.config({
     float = {

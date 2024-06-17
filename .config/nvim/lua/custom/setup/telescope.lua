@@ -18,7 +18,13 @@ require('telescope').load_extension('fzf')
 -- Add telescope keymaps with <leader>s prefix
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = "[S]earch [F]iles" })
-vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = "[S]earch [S]tring" })
+vim.keymap.set('n', '<leader>ss', function()
+    local query = vim.fn.input("Search string: ")
+    if query == "" then
+        return
+    end
+    builtin.grep_string({ search = query })
+end, { desc = "[S]earch [S]tring" })
 vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = "[S]earch [W]ord under cursor" })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = "[S]earch [B]uffers" })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = "[S]earch [H]elp tags" })
