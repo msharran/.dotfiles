@@ -7,7 +7,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
+
 vim.opt.guicursor = ""
+vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 4
@@ -29,12 +31,11 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
-vim.filetype.add({
-    extension = {
-        templ = "templ",
-    },
-})
--- Setting rg as grepprg
-vim.opt.grepprg = "rg --hidden --vimgrep --glob '!{.git,node_modules}/*'"
+vim.opt.grepprg = "rg --hidden --vimgrep --glob '!{.git,node_modules}/*'" -- Setting rg as grepprg
 vim.opt.timeout = true
 vim.opt.timeoutlen = 300
+
+-- match indication
+vim.opt.showmatch = true
+vim.opt.matchtime = 1
+

@@ -2,10 +2,10 @@
 require('telescope').setup {
     extensions = {
         fzf = {
-            fuzzy = true,                       -- false will only do exact matching
-            override_generic_sorter = true,     -- override the generic sorter
-            override_file_sorter = true,        -- override the file sorter
-            case_mode = "smart_case",           -- or "ignore_case" or "respect_case"
+            fuzzy = true,                   -- false will only do exact matching
+            override_generic_sorter = true, -- override the generic sorter
+            override_file_sorter = true,    -- override the file sorter
+            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
             -- the default case_mode is "smart_case"
         }
     }
@@ -35,14 +35,14 @@ vim.keymap.set('n', '<leader>sm', builtin.man_pages, { desc = "[S]earch [M]an pa
 require("todo-comments").setup()
 
 -- Add Telescope todo-comments keymap
-vim.keymap.set("n", "<leader>st", "<CMD>Telescope todo-comments keywords=TODO,FIX,HACK<CR>",
+vim.keymap.set("n", "<leader>st", "<CMD>Telescope todo-comments keywords=TODO,FIXME,HACK<CR>",
     { desc = "[S]earch [T]odos" })
 
 -- Add todo-comments navigation keymaps
 vim.keymap.set("n", "]t", function()
-    require("todo-comments").jump_next({ keywords = { "TODO", "HACK" } })
+    require("todo-comments").jump_next({ keywords = { "TODO", "HACK", "FIXME" } })
 end, { desc = "Next todo comment" })
 
 vim.keymap.set("n", "[t", function()
-    require("todo-comments").jump_prev({ keywords = { "TODO", "HACK" } })
+    require("todo-comments").jump_prev({ keywords = { "TODO", "HACK", "FIXME" } })
 end, { desc = "Previous todo comment" })

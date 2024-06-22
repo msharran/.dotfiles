@@ -15,9 +15,6 @@ require("luasnip.loaders.from_vscode").lazy_load()
 -- NOTE: You can add custom snippets stored in a directory. Refer
 -- the above link for more information.
 
--- Initialize copilot source
-require("copilot_cmp").setup()
-
 -- Setup Completion
 local cmp = require('cmp')
 local lspkind = require('lspkind')
@@ -40,8 +37,7 @@ cmp.setup({
         { name = "nvim_lsp_signature_help" },
         { name = "luasnip" },
         { name = "path" },
-        { name = "nvim_lua" },
-        { name = "copilot", },
+        { name = "nvim_lua" }
     }, {
         { name = 'buffer' },
     }),
@@ -52,11 +48,5 @@ cmp.setup({
             max_width = 50,
             symbol_map = { Copilot = "" }
         })
-    },
-    sorting = {
-        priority_weight = 2,
-        comparators = {
-            require("copilot_cmp.comparators").prioritize,
-        },
     },
 })
