@@ -7,6 +7,6 @@ vim.keymap.set("n", "<leader>e", ui.toggle_quick_menu, { desc = "Toggle harpoon 
 for i = 1, 9 do
     vim.keymap.set("n", "<leader>" .. i, function()
         ui.nav_file(i)
-        print("\"" .. vim.fn.expand("%") .. "\"" .. ", Harpoon " .. i .. " selected")
+        print("Harpoon " .. i .. ", selected")
     end, { desc = "Harpoon file " .. i })
 end

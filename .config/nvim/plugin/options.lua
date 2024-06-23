@@ -26,16 +26,11 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.termguicolors = true
+vim.opt.background = "dark"
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
-vim.opt.grepprg = "rg --hidden --vimgrep --glob '!{.git,node_modules}/*'" -- Setting rg as grepprg
 vim.opt.timeout = true
 vim.opt.timeoutlen = 300
-
--- match indication
-vim.opt.showmatch = true
-vim.opt.matchtime = 1
-

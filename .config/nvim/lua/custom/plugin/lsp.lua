@@ -21,8 +21,5 @@ return {
             -- Adding vim-go for features like GoAddTags, GoFillStructs etc.,
             { 'fatih/vim-go' }
         },
-        config = function()
-            require("custom.setup.lsp")
-        end
     }
 }
