@@ -1,3 +1,5 @@
+require('neodev').setup()
+
 -- Setup treesitter
 require('nvim-treesitter.configs').setup {
     -- a list of parser names, or "all"

@@ -1,7 +1,8 @@
 -- Setup UX
 
 -- Colorscheme
-vim.cmd.colorscheme('seoul256')
+-- We prepend it with 'silent!' to ignore errors when it's not yet installed.
+vim.cmd('silent! colorscheme seoul256')
 
 -- Setup colorizer
 -- WARN: Getting error &termguicolors is not set despite setting it in options.lua
@@ -18,3 +19,9 @@ vim.api.nvim_create_autocmd('VimEnter', {
 -- Setup WhichKey for keybindings
 require("which-key").setup()
 vim.keymap.set("n", "<leader>?", "<CMD>WhichKey<CR>", { desc = "Show which-key" })
+
+-- Setup markdown
+ require('render-markdown').setup({})
+
+ -- Setup Comment.nvim
+ require('Comment').setup()
