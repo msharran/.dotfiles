@@ -9,6 +9,7 @@ file which installs packages declared in
 
 1. Clone the repo into your home directory.
 
+> [!NOTE]
 > I am using Github CLI, you can use any means like http or ssh
 
 ```bash
