@@ -1,24 +1,5 @@
-set number
-set relativenumber
-set tabstop=4 " TODO: revisit this
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-set nowrap 
-set noswapfile 
-set nobackup 
-set undofile 
-set hlsearch 
-set incsearch 
-set ignorecase 
-set termguicolors 
-set signcolumn=yes
-set isfname+="@-@"
-set updatetime=50
-set colorcolumn=80
-set timeout
-set timeoutlen=300
+" Open Netrw
+nmap - :Explore<CR>
 
 augroup highlight_yank
     autocmd!
@@ -30,8 +11,12 @@ augroup END
 " Very useful for navigating through a project
 set path+=**
 
-" match indication
-set showmatch
-
+" Grep
 " Use Ag (the_silver_searcher) as grepprg
 set grepprg=ag\ --vimgrep\ --hidden
+" Search word
+nmap ,w :grep "<C-R><C-W>"<CR>
+" Search WORD 
+nmap ,W :grep "<C-R><C-A>"<CR>
+" Pre type :grep command
+nmap ,g :grep ""<left>

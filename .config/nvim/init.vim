@@ -1,5 +1,3 @@
-let g:mapleader = "\\"
-
 " Setup vim-plug
 lua require("plugins")
 

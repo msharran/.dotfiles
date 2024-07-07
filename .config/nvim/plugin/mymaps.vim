@@ -7,12 +7,3 @@ nmap n nzz
 nmap N Nzz
 nmap p pzz
 nmap P Pzz
-
-" Search word
-nmap ,w :grep "<C-R><C-W>"<CR>
-
-" Search WORD 
-nmap ,W :grep "<C-R><C-A>"<CR>
-
-" Pre type :grep command
-nmap ,g :grep "<C-R><C-A>"<left>
