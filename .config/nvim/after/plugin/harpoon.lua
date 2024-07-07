@@ -1,12 +1,8 @@
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
-
-vim.keymap.set("n", "<leader>a", mark.add_file, { desc = "Add file to harpoon" })
-vim.keymap.set("n", "<leader>e", ui.toggle_quick_menu, { desc = "Toggle harpoon menu" })
-
-for i = 1, 9 do
-    vim.keymap.set("n", "<leader>" .. i, function()
-        ui.nav_file(i)
-        print("Harpoon " .. i .. ", selected")
-    end, { desc = "Harpoon file " .. i })
-end
+vim.cmd([[
+nmap <leader>a :lua require("harpoon.mark").add_file()<CR>
+nmap <leader>e :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nmap <F9> :lua require("harpoon.ui").nav_file(1)<CR>
+nmap <F10> :lua require("harpoon.ui").nav_file(2)<CR>
+nmap <F11> :lua require("harpoon.ui").nav_file(3)<CR>
+nmap <F12> :lua require("harpoon.ui").nav_file(4)<CR>
+]])

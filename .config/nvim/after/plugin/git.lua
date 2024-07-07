@@ -1,32 +1,14 @@
-vim.keymap.set("n", "<leader>gs", "<cmd>:tab Git<CR>", { desc = "[G]it [S]tatus" })
+vim.cmd [[nmap <leader>gs <CMD>:tab Git<CR>]]
 
-
-require('gitlinker').setup({
-    mappings = nil
-})
-vim.api.nvim_set_keymap('n', '<leader>gy',
-    '<cmd>lua require"gitlinker".get_buf_range_url("n", {})<cr>',
-    { desc = "[G]it [Y]ank current line url" })
-
-vim.api.nvim_set_keymap('v', '<leader>gy',
-    '<cmd>lua require"gitlinker".get_buf_range_url("v", {})<cr>',
-    { desc = "[G]it [Y]ank selected line(s) url" })
-
-vim.api.nvim_set_keymap('n', '<leader>gb',
-    '<cmd>lua require"gitlinker".get_buf_range_url("n", {action_callback = require"gitlinker.actions".open_in_browser})<cr>',
-    { silent = true, desc = "[G]it [B]rowse current line url" })
-
-vim.api.nvim_set_keymap('v', '<leader>gb',
-    '<cmd>lua require"gitlinker".get_buf_range_url("v", {action_callback = require"gitlinker.actions".open_in_browser})<cr>',
-    { desc = "[G]it [B]rowse selected line(s) url" })
-
-vim.api.nvim_set_keymap('n', '<leader>gY', '<cmd>lua require"gitlinker".get_repo_url()<cr>',
-    { silent = true, desc = "[G]it [Y]ank repo url" })
-
-vim.api.nvim_set_keymap('n', '<leader>gB',
-    '<cmd>lua require"gitlinker".get_repo_url({action_callback = require"gitlinker.actions".open_in_browser})<cr>',
-    { silent = true, desc = "[G]it [B]rowse repo url" })
-
+require('gitlinker').setup({ mappings = nil })
+vim.cmd [[
+nmap <leader>gy <CMD>lua require"gitlinker".get_buf_range_url("n", {})<CR>
+vmap <leader>gy <CMD>lua require"gitlinker".get_buf_range_url("v", {})<CR>
+nmap <leader>gb <CMD>lua require"gitlinker".get_buf_range_url("n", {action_callback = require"gitlinker.actions".open_in_browser})<CR>
+vmap <leader>gb <CMD>lua require"gitlinker".get_buf_range_url("v", {action_callback = require"gitlinker.actions".open_in_browser})<CR>
+nmap <leader>gY <CMD>lua require"gitlinker".get_repo_url()<CR>
+nmap <leader>gB <CMD>lua require"gitlinker".get_repo_url({action_callback = require"gitlinker.actions".open_in_browser})<CR>
+]]
 
 require('gitsigns').setup({
     current_line_blame = true,             -- Toggle with `:Gitsigns toggle_current_line_blame`

@@ -11,8 +11,8 @@ args = ["-l"]
 TERM = "xterm-256color"
 
 [window]
-option_as_alt = "Both" # (macos only)
-decorations = "none"
+option_as_alt = "Both"     # (macos only)
+decorations = "buttonless"
 dynamic_padding = true
 opacity = 0.8
 blur = true
@@ -24,7 +24,6 @@ blur = true
 # $ brew search font-
 # Then copy the name of the font you want to install and run the 
 # first commmand
-# normal = { family = "Source Code Pro for Powerline" }
-normal = { family = "Inconsolata-dz for Powerline" }
+normal = { family = "CaskaydiaCove Nerd Font", style = "SemiLight" }
+italic = { family = "CaskaydiaCove Nerd Font", style = "SemiLight Italic" }
 size = 15
-# offset = { x = 0, y = 1 }

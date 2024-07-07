@@ -1,5 +1,8 @@
-# [keyboard]
-#
-# bindings = [
-#     { key = "Space", mods = "Shift", action = "ToggleViMode" },
-# ]
+[keyboard]
+
+bindings = [
+    # Super useful terminal movement
+    # https://stackoverflow.com/questions/58516583/move-cursor-word-by-word-in-alacritty
+    { key = "Right", mods = "Shift", chars = "\u001BF" },
+    { key = "Left", mods = "Shift", chars = "\u001BB" },
+]

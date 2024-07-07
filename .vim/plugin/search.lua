@@ -6,5 +6,6 @@ vim.opt.path:append("**")
 -- match indication
 vim.opt.showmatch = true
 
--- Use ripgrep for grepping
-vim.opt.grepprg = "rg --hidden --vimgrep --glob '!{.git,node_modules}/*'" -- Setting rg as grepprg
+-- Use Ag (the_silver_searcher) for grepping
+-- --hidden obeys .gitignore
+vim.opt.grepprg = "ag --vimgrep --hidden"

@@ -33,10 +33,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.tbl_extend('force', opts, { desc = "Go to Definition" }))
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end,
             vim.tbl_extend('force', opts, { desc = "Show Hover" }))
-        vim.keymap.set("n", "gr", "<cmd>:Telescope lsp_references<cr>",
-            vim.tbl_extend('force', opts, { desc = "LSP References" }))
-        vim.keymap.set("n", "gI", "<cmd>:Telescope lsp_implementations<cr>",
-            vim.tbl_extend('force', opts, { desc = "LSP Implementations" }))
+        vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
+            vim.tbl_extend('force', opts, { desc = "Show references" }))
+        vim.keymap.set("n", "gI", function() vim.lsp.buf.implementation() end,
+            vim.tbl_extend('force', opts, { desc = "Show implementations" }))
         vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end,
             vim.tbl_extend('force', opts, { desc = "Next Diagnostic" }))
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end,
@@ -55,10 +55,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Setup NVIM LSP
 local lspconfig = require("lspconfig")
-local capabilities = vim.tbl_deep_extend("force", {},
-    vim.lsp.protocol.make_client_capabilities(),
-    require("cmp_nvim_lsp").default_capabilities()
-)
+local capabilities = vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(),
+    require("cmp_nvim_lsp").default_capabilities())
 require("fidget").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
