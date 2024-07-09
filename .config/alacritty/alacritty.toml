@@ -24,6 +24,6 @@ blur = true
 # $ brew search font-
 # Then copy the name of the font you want to install and run the 
 # first commmand
-normal = { family = "CaskaydiaCove Nerd Font", style = "SemiLight" }
-italic = { family = "CaskaydiaCove Nerd Font", style = "SemiLight Italic" }
-size = 15
+normal = { family = "SauceCodePro Nerd Font", style = "Regular" }
+italic = { family = "SauceCodePro Nerd Font", style = "Italic" }
+size = 14
