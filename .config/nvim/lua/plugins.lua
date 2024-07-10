@@ -5,9 +5,7 @@ vim.call('plug#begin')
 
 Plug('tpope/vim-vividchalk')               -- Colorscheme
 Plug('folke/which-key.nvim')               -- Keybindings helper
-Plug('chentoast/marks.nvim')               -- Marks helper
 Plug('norcalli/nvim-colorizer.lua')        -- Colorizer
-Plug('MeanderingProgrammer/markdown.nvim') -- Markdown preview
 Plug('nvim-lua/plenary.nvim')              -- Lua lib used by many plugins
 Plug('folke/todo-comments.nvim')           -- TODO, FIXME, etc. comment highlights
 Plug('tpope/vim-repeat')                   -- Repeat plugin maps
@@ -52,6 +50,12 @@ Plug('saadparwaiz1/cmp_luasnip')                                                
 Plug('onsails/lspkind.nvim')                                                     -- nvim-cmp pictograms
 Plug('L3MON4D3/LuaSnip', { ['tag'] = 'v2.*', ['do'] = 'make install_jsregexp' }) -- Snippets plugin
 Plug('hrsh7th/nvim-cmp')                                                         -- Autocompletion plugin
+
+-- Debugger
+Plug('mfussenegger/nvim-dap') -- Debugger
+Plug('leoluz/nvim-dap-go')
+Plug("rcarriga/nvim-dap-ui")
+Plug('nvim-neotest/nvim-nio')
 
 -- Notes
 Plug('vimwiki/vimwiki') -- Vimwiki

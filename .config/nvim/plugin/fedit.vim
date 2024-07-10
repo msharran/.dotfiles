@@ -1,5 +1,5 @@
 " Open Netrw
-nmap E :Explore<CR>
+nnoremap E :Explore<CR>
 " check ftplugin/netrw.vim for more mappings
 
 augroup highlight_yank
@@ -16,11 +16,20 @@ set path+=**
 " Use Ag (the_silver_searcher) as grepprg
 set grepprg=ag\ --vimgrep\ --hidden
 " Search word
-nmap ,w :grep -w "<C-R><C-W>"<CR>
+nnoremap <Leader>w :grep -w "<C-R><C-W>"<CR>
 " Search WORD 
-nmap ,W :grep -w "<C-R><C-A>"<CR>
+nnoremap <Leader>W :grep -w "<C-R><C-A>"<CR>
 " Pre type :grep command
-nmap ,g :grep ""<left>
+nnoremap <Leader>s :grep ""<Left>
+" Autocommand to open quickfix window automatically
+" when quickfix list is populated.
+augroup quickfix
+    autocmd!
+    " {pattern} is matched against the quickfix command being run
+    " check :h QuickFixCmdPre for more info
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l* lwindow
+augroup END
 
 " When fzf starts in a terminal buffer, the file type of the buffer is set to
 " `fzf`. So you can set up `FileType fzf` autocmd to customize the settings of
@@ -29,9 +38,7 @@ nmap ,g :grep ""<left>
 " For example, if you open fzf on the bottom on the screen (e.g. `{'down':
 " '40%'}`), you might want to temporarily disable the statusline for a cleaner
 " look.
-
-" , as search prefix
-nmap ,f :Files<CR> 
+nnoremap <Leader>f :Files<CR> 
 let g:fzf_layout = { 'down': '25%' }
 
 augroup fzf

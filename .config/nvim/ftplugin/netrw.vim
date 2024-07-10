@@ -1,3 +1,3 @@
 " Same mapping is used for opening Netrw from other file types.
-" Following the same mapping here as well.
-nmap <buffer> E :normal -<CR>
+" Following the same noremapping here as well.
+nnoremap <buffer> E :normal -<CR>

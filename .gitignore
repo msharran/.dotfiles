@@ -2,3 +2,4 @@
 auth.json
 *.log
 /.warp/launch_configurations/*.yaml
+/.config/dlv

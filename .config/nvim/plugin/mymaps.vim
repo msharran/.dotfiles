@@ -1,3 +1,3 @@
-map <leader>y "+y
-nmap Q :noh<CR>
-nmap <leader>x :silent !chmod +x %<CR>
+noremap <leader>y "+y
+nnoremap Q :noh<CR>
+nnoremap <leader>x :silent !chmod +x %<CR>
