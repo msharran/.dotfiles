@@ -1,2 +1,2 @@
-nnoremap P :G push<CR>
-nnoremap p :G pull --rebase<CR>
+nnoremap <buffer> <LocalLeader>P :Git push<CR>
+nnoremap <buffer> <LocalLeader>p :Git pull --rebase<CR>
