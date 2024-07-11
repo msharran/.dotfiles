@@ -13,3 +13,7 @@ dryrun:
 .PHONY: clean
 clean:
 	stow -v -D .
+
+.PHONY: submodules
+submodules:
+	git submodule update --init --recursive --remote
