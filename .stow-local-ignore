@@ -8,3 +8,4 @@ Installfile
 .*\.terminfo
 .*\.bkp
 .tmux/plugins
+.dotfiles/.gitmodules
