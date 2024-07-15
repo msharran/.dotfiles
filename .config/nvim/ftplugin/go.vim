@@ -16,3 +16,7 @@ nnoremap <buffer> <Leader>dt :lua require('dap-go').debug_test()<CR>
 " Go snippets
 iabbrev <buffer> ife$ if err != nil {<CR><Space>return<CR>}<Esc><Up>A
 iabbrev <buffer> iff$ if err != nil {<CR><Space>log.Fatal(err)<CR>}<CR>
+iabbrev <buffer> pd$ fmt.Println("::::::: DEBUG :::::::",)<Left>
+iabbrev <buffer> pdf$ fmt.Printf("::::::: DEBUG ::::::: %v\n",)<Left>
+iabbrev <buffer> ft$ func Test<Esc>mza(t *testing.T) {<CR>}<CR><ESC>`z
+iabbrev <buffer> ftr$ t.Run("<Esc>mza", func(t *testing.T) {<CR>})<CR><ESC>`z
