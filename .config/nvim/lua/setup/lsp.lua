@@ -65,7 +65,11 @@ require("mason-lspconfig").setup({
         "rust_analyzer",
         "gopls",
         "solargraph",
-        "rubocop"
+        "rubocop",
+        "pylsp",
+        "vimls",
+        "yamlls",
+        "jsonls",
     },
     handlers = {
         function(server_name) -- default handler (optional)

@@ -4,6 +4,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 Plug('tpope/vim-vividchalk')               -- Colorscheme
+Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 Plug('folke/which-key.nvim')               -- Keybindings helper
 Plug('norcalli/nvim-colorizer.lua')        -- Colorizer
 Plug('nvim-lua/plenary.nvim')              -- Lua lib used by many plugins

@@ -1,7 +1,3 @@
-" Open Netrw
-nnoremap E :Explore<CR>
-" check ftplugin/netrw.vim for more mappings
-
 augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup = 'IncSearch', timeout = 500 }
@@ -14,8 +10,14 @@ set path+=**
 nnoremap ge :find *
 nnoremap gE :find .**/*
 nnoremap gb :b<space>
-nnoremap g- :e .<CR>
+cnoremap <C-s> *
 
+" Break down the following command:
+"   :let @z=expand("%:t")<CR> - Get the current file name and store it in register z
+"   :Ex<CR> - Open the file explorer
+"   /<C-R>z<CR> - Search for the file name in the file explorer
+"   :noh<CR> - Clear the search highlight
+nnoremap g- :let @z=expand("%:t")<CR>:Ex<CR>/<C-R>z<CR>:noh<CR>
 
 " Grep
 " Use Ag (the_silver_searcher) as grepprg
