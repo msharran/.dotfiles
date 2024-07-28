@@ -11,11 +11,9 @@ Plug('nvim-lua/plenary.nvim')              -- Lua lib used by many plugins
 Plug('folke/todo-comments.nvim')           -- TODO, FIXME, etc. comment highlights
 Plug('tpope/vim-repeat')                   -- Repeat plugin maps
 Plug('tpope/vim-surround')                 -- Surround text with brackets, quotes, etc.
-Plug('tpope/vim-obsession')                -- Automatic session management
 Plug('tpope/vim-unimpaired')               -- Pairs of useful mappings
 Plug('numToStr/Comment.nvim')              -- Comment lines
 Plug('christoomey/vim-tmux-navigator')     -- Navigate between vim and tmux panes
-Plug('theprimeagen/harpoon')               -- Better project wise marks
 
 -- Git plugins
 Plug('tpope/vim-fugitive')      -- Git commands
@@ -48,8 +46,5 @@ Plug('mfussenegger/nvim-dap') -- Debugger
 Plug('leoluz/nvim-dap-go')
 Plug("rcarriga/nvim-dap-ui")
 Plug('nvim-neotest/nvim-nio')
-
--- Notes
-Plug('vimwiki/vimwiki') -- Vimwiki
 
 vim.call('plug#end')

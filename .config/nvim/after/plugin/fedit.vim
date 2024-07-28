@@ -9,7 +9,7 @@ augroup END
 set path+=**
 nnoremap ge :find *
 nnoremap gE :find .**/*
-nnoremap gb :b<space>
+nnoremap gb :ls<CR>:b<Space>
 cnoremap <C-s> *
 
 " Break down the following command:
@@ -20,8 +20,8 @@ cnoremap <C-s> *
 nnoremap g- :let @z=expand("%:t")<CR>:Ex<CR>/<C-R>z<CR>:noh<CR>
 
 " Grep
-" Use Ag (the_silver_searcher) as grepprg
-set grepprg=ag\ --vimgrep\ --hidden
+" Use Rg as grepprg
+set grepprg=rg\ --vimgrep\ --hidden
 " Search word
 nnoremap gw :grep -w "<C-R><C-W>"<CR>
 " Search WORD 
