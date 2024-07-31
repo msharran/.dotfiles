@@ -3,21 +3,8 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
-Plug('tpope/vim-vividchalk')               -- Colorscheme
-Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
-Plug('folke/which-key.nvim')               -- Keybindings helper
-Plug('norcalli/nvim-colorizer.lua')        -- Colorizer
-Plug('nvim-lua/plenary.nvim')              -- Lua lib used by many plugins
-Plug('folke/todo-comments.nvim')           -- TODO, FIXME, etc. comment highlights
-Plug('tpope/vim-repeat')                   -- Repeat plugin maps
-Plug('tpope/vim-surround')                 -- Surround text with brackets, quotes, etc.
-Plug('tpope/vim-unimpaired')               -- Pairs of useful mappings
-Plug('numToStr/Comment.nvim')              -- Comment lines
-Plug('christoomey/vim-tmux-navigator')     -- Navigate between vim and tmux panes
-
 -- Git plugins
 Plug('tpope/vim-fugitive')      -- Git commands
-Plug('junegunn/gv.vim')         -- Git commit browser
 Plug('ruifm/gitlinker.nvim')    -- Open github links
 Plug('lewis6991/gitsigns.nvim') -- Git signs
 

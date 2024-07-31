@@ -10,7 +10,19 @@ require("neorg").setup {
                 default_workspace = "notes",
             },
         },
+        ["core.completion"] = {
+            config = {
+                engine = "nvim-cmp",
+            }
+        },
+        ["core.integrations.nvim-cmp"] = {},
+        ["core.integrations.treesitter"] = {},
+        ["core.esupports.indent"] = {},
+        ["core.itero"] = {},
+        ["core.promo"] = {},
+        ["core.export"] = {},
     },
 }
+
 vim.wo.foldlevel = 99
 vim.wo.conceallevel = 2

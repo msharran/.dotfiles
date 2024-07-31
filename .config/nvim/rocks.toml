@@ -11,6 +11,27 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
+# Rocks Nvim
 "rocks.nvim" = "2.36.0" # rocks.nvim can also manage itself :D
 "rocks-config.nvim" = "2.1.5"
+"rocks-git.nvim" = "2.0.1"
+
+# Notes
 neorg = "9.1.1"
+"zen-mode.nvim" = "1.4.0"
+
+# Editor
+"oil.nvim" = "2.11.0"
+fzf-lua = "0.0.1399"
+"vim-repeat" = { git = "tpope/vim-repeat" }
+"vim-surround" = { git = "tpope/vim-surround" }
+"vim-unimpaired" = { git = "tpope/vim-unimpaired" }
+"Comment.nvim" = { git = "numToStr/Comment.nvim" }
+"vim-tmux-navigator" = { git = "christoomey/vim-tmux-navigator" }
+"which-key.nvim" = { git = "folke/which-key.nvim" }
+"todo-comments.nvim" = { git = "folke/todo-comments.nvim" }
+"nvim-colorizer.lua" = { git = "norcalli/nvim-colorizer.lua" }
+"plenary.nvim" = { git = "nvim-lua/plenary.nvim" }
+
+# Colorscheme
+"catppuccin" = { git = "catppuccin/nvim", rev = "v1.8.0" }
