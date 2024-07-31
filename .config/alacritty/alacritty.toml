@@ -14,8 +14,8 @@ TERM = "xterm-256color"
 option_as_alt = "Both"     # (macos only)
 decorations = "buttonless"
 dynamic_padding = true
-opacity = 0.8
-blur = true
+# opacity = 0.8
+# blur = true
 
 [font]
 # Installed by running 
@@ -26,4 +26,4 @@ blur = true
 # first commmand
 normal = { family = "SauceCodePro Nerd Font", style = "Regular" }
 italic = { family = "SauceCodePro Nerd Font", style = "Italic" }
-size = 14
+size = 14.25
