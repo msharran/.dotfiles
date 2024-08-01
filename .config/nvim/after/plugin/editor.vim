@@ -17,7 +17,7 @@ cnoremap <C-s> *
 "   :Ex<CR> - Open the file explorer
 "   /<C-R>z<CR> - Search for the file name in the file explorer
 "   :noh<CR> - Clear the search highlight
-nnoremap g- :let @z=expand("%:t")<CR>:Ex<CR>/<C-R>z<CR>:noh<CR>
+" nnoremap - :let @z=expand("%:t")<CR>:Ex<CR>/<C-R>z<CR>:noh<CR>
 
 " Grep
 " Use Rg as grepprg
@@ -28,6 +28,9 @@ nnoremap gw :grep -w "<C-R><C-W>"<CR>
 nnoremap gW :grep -w "<C-R><C-A>"<CR>
 " Pre type :grep command
 nnoremap gs :grep ""<Left>
+" Search selected text. Yank selection to `s` register and search for it.
+vnoremap gs "sy:grep "<C-R>s"<CR>`>
+vnoremap gw "sy:grep -w "<C-R>s"<CR>`>
 
 " Autocommand to open quickfix window automatically
 " when quickfix list is populated.
@@ -39,7 +42,15 @@ augroup quickfix
     autocmd QuickFixCmdPost l* lwindow
 augroup END
 
+" some useful maps
 noremap <leader>y "+y
 nnoremap Q :noh<CR>
 nnoremap <leader>x :silent !chmod +x %<CR>
-nnoremap <F12> :read !date<CR>kJ
+
+nnoremap <leader>D ms:r !date "+\%d-\%m-\%Y"<CR>dW<Esc>`sp
+nnoremap <leader>T ms:r !date "+\%d-\%m-\%Y \%H:\%M \%p \%Z"<CR>dW<Esc>`sp
+
+nnoremap <leader>= :resize +5<CR>
+nnoremap <leader>- :resize -5<CR>
+nnoremap <leader>. :vertical resize +5<CR>
+nnoremap <leader>, :vertical resize -5<CR>
