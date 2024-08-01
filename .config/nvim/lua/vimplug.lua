@@ -3,7 +3,7 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
-Plug('tpope/vim-vividchalk')               -- Colorscheme
+-- Editor
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 Plug('folke/which-key.nvim')               -- Keybindings helper
 Plug('norcalli/nvim-colorizer.lua')        -- Colorizer
@@ -14,10 +14,10 @@ Plug('tpope/vim-surround')                 -- Surround text with brackets, quote
 Plug('tpope/vim-unimpaired')               -- Pairs of useful mappings
 Plug('numToStr/Comment.nvim')              -- Comment lines
 Plug('christoomey/vim-tmux-navigator')     -- Navigate between vim and tmux panes
+Plug('stevearc/oil.nvim')                  -- File explorer
 
 -- Git plugins
 Plug('tpope/vim-fugitive')      -- Git commands
-Plug('junegunn/gv.vim')         -- Git commit browser
 Plug('ruifm/gitlinker.nvim')    -- Open github links
 Plug('lewis6991/gitsigns.nvim') -- Git signs
 

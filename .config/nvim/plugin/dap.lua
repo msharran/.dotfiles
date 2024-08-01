@@ -1,6 +1,9 @@
-lua require("setup.dap")
+require("dapui").setup()
 
-" maps
+-- = Go =
+require('dap-go').setup()
+
+vim.cmd [[
 nnoremap \b :lua require'dap'.toggle_breakpoint()<CR>
 nnoremap \l :lua require'dap'.list_breakpoints()<CR>:cw<CR>
 nnoremap \L :lua require'dap'.clear_breakpoints()<CR>
@@ -18,3 +21,4 @@ nnoremap <F3> :lua require'dap'.step_over()<CR>
 nnoremap <F4> :lua require'dap'.step_into()<CR>
 nnoremap <F5> :lua require'dap'.step_out()<CR>
 nnoremap <F2> silent! call repeat#set("\<Plug>DapContinue", v:count)<CR>
+]]
