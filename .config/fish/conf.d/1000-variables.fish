@@ -48,3 +48,7 @@ set -gx NVIMHOME "$XDG_CONFIG_HOME/nvim"
 # FZF
 # --height 40% --layout reverse --border
 set -gx FZF_DEFAULT_OPTS "--height 40% --layout reverse --border"
+
+# Brew luarocks
+# export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
+set -gx DYLD_LIBRARY_PATH "$(brew --prefix)/lib" $DYLD_LIBRARY_PATH
