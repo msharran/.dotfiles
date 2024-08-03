@@ -25,8 +25,6 @@ nnoremap <buffer> <. <Plug>(neorg.promo.demote)
 vnoremap <buffer> < <Plug>(neorg.promo.demote.range)
 vnoremap <buffer> > <Plug>(neorg.promo.promote.range)
 
-nnoremap <buffer> <C-v> <Plug>(neorg.esupports.hop.hop-link.vsplit)
-
 nnoremap <buffer> [h <Plug>(neorg.treesitter.previous.heading)
 nnoremap <buffer> ]h <Plug>(neorg.treesitter.next.heading)
 

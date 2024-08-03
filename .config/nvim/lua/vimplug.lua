@@ -51,4 +51,8 @@ Plug('leoluz/nvim-dap-go')
 Plug("rcarriga/nvim-dap-ui")
 Plug('nvim-neotest/nvim-nio')
 
+-- Presentation
+Plug('sotte/presenting.nvim') -- Presentation
+
+
 vim.call('plug#end')

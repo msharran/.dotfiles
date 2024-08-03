@@ -5,12 +5,12 @@ require('copilot').setup({
         auto_trigger = true,
         debounce = 75,
         keymap = {
-            accept = "<C-x><C-y>",
+            accept = "<C-b><C-y>",
             accept_word = false,
             accept_line = false,
-            next = "<C-x><C-n>",
-            prev = "<C-x><C-p>",
-            dismiss = "<C-x><C-c>",
+            next = "<C-b><C-n>",
+            prev = "<C-b><C-p>",
+            dismiss = "<C-b><C-c>",
         },
     },
     filetypes = {
@@ -18,6 +18,3 @@ require('copilot').setup({
         markdown = true,
     },
 })
-
-vim.keymap.set("n", "<leader>cs", [[:Copilot status<CR>]])
-vim.keymap.set("n", "<leader>cp", [[:Copilot panel<CR>]])
