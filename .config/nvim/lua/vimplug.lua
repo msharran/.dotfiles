@@ -9,7 +9,6 @@ Plug('tpope/vim-repeat')               -- Repeat plugin maps
 Plug('tpope/vim-surround')             -- Surround text with brackets, quotes, etc.
 Plug('tpope/vim-unimpaired')           -- Pairs of useful mappings
 Plug('numToStr/Comment.nvim')          -- Comment lines
-Plug('christoomey/vim-tmux-navigator') -- Navigate between vim and tmux panes
 Plug('stevearc/oil.nvim')              -- File explorer
 
 -- Looks
@@ -51,8 +50,10 @@ Plug('leoluz/nvim-dap-go')
 Plug("rcarriga/nvim-dap-ui")
 Plug('nvim-neotest/nvim-nio')
 
--- Presentation
-Plug('sotte/presenting.nvim') -- Presentation
+-- Presenting nvim
+Plug('sotte/presenting.nvim')
 
+-- Kitty
+Plug('fladson/vim-kitty')
 
 vim.call('plug#end')

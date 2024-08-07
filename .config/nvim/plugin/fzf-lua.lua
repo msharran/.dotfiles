@@ -7,5 +7,4 @@ require("fzf-lua").setup({
 
 vim.cmd [[
 nnoremap <C-p> <cmd>lua require('fzf-lua').files()<CR>
-inoremap <c-x><c-f> <cmd>lua require("fzf-lua").complete_path()<cr>
 ]]

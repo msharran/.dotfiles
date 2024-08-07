@@ -47,9 +47,11 @@ noremap <leader>y "+y
 nnoremap Q :noh<CR>
 nnoremap <leader>x :silent !chmod +x %<CR>
 
+" Date and time
 nnoremap <leader>D ms:r !date "+\%d-\%m-\%Y"<CR>dW<Esc>`sp
 nnoremap <leader>T ms:r !date "+\%d-\%m-\%Y \%H:\%M \%p \%Z"<CR>dW<Esc>`sp
 
+" Resize panes
 nnoremap <leader>= :resize +5<CR>
 nnoremap <leader>- :resize -5<CR>
 nnoremap <leader>. :vertical resize +5<CR>

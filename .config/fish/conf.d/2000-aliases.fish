@@ -53,3 +53,26 @@ end
 function k
     kubectl $argv
 end
+
+function ssh
+    kitten ssh $argv
+end
+
+function yy
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
+
+function ls
+    # if gls is in PATH, use it, else fallback to ls
+    if command -v gls > /dev/null 
+        gls --hyperlink=auto --color=auto $argv
+    else
+        command ls --color=auto $argv
+    end
+end
+

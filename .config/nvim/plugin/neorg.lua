@@ -21,6 +21,7 @@ require("neorg").setup {
         ["core.itero"] = {},
         ["core.promo"] = {},
         ["core.export"] = {},
+        ["core.text-objects"] = {},
     },
 }
 
