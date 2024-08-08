@@ -55,6 +55,5 @@ Plug 'sotte/presenting.nvim'
 
 -- Kitty
 Plug 'fladson/vim-kitty'
-Plug 'knubie/vim-kitty-navigator'
 
 vim.call('plug#end')
