@@ -30,9 +30,6 @@ set -gx PATH $PATH /Users/sharranm/.linkerd2/bin
 # XDG_CONFIG_HOME
 set -gx XDG_CONFIG_HOME $HOME/.config
 
-# Bat
-set -gx BAT_THEME "Catppuccin Mocha"
-
 # C
 # Add homebrew C headers and libs to compiler paths (for both gcc and clang)
 set -gx CPATH $(brew --prefix)/include $CPATH
