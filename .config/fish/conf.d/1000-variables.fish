@@ -52,3 +52,6 @@ set -gx DYLD_LIBRARY_PATH "$(brew --prefix)/lib" $DYLD_LIBRARY_PATH
 
 # Rust
 fish_add_path $HOME/.cargo/bin
+
+# Less options, set colors and line numbers
+set -gx LESS '--chop-long-lines --RAW-CONTROL-CHARS --LINE-NUMBERS'
