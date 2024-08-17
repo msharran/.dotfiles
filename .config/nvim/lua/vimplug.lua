@@ -13,6 +13,7 @@ Plug 'stevearc/oil.nvim'     -- File explorer
 
 -- Looks
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
+Plug 'sainnhe/gruvbox-material'
 Plug 'nvim-tree/nvim-web-devicons' -- Icons for plugins
 Plug 'folke/which-key.nvim'        -- Keybindings helper
 Plug 'norcalli/nvim-colorizer.lua' -- Colorizer

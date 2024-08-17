@@ -17,6 +17,9 @@ set -gx PATH $PATH $HOME/.rvm/bin
 # Java
 set -gx JAVA_HOME $(/usr/libexec/java_home -v 11)
 
+# Python
+set -gx PATH /Users/$(whoami)/Library/Python/3.9/bin $PATH 
+
 # Deno 
 set -gx DENO_INSTALL /Users/sharranm/.deno
 set -gx PATH $DENO_INSTALL/bin $PATH
@@ -54,4 +57,4 @@ set -gx DYLD_LIBRARY_PATH "$(brew --prefix)/lib" $DYLD_LIBRARY_PATH
 fish_add_path $HOME/.cargo/bin
 
 # Less options, set colors and line numbers
-set -gx LESS '--chop-long-lines --RAW-CONTROL-CHARS --LINE-NUMBERS'
+set -gx LESS '--chop-long-lines --RAW-CONTROL-CHARS'
