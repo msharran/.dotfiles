@@ -2541,7 +2541,7 @@ map cmd+t       new_tab_with_cwd
 #: }}}
 
 # BEGIN_KITTY_THEME
-# Gruvbox Material Light Medium
+# Gruvbox Material Dark Soft
 include current-theme.conf
 # END_KITTY_THEME
 
