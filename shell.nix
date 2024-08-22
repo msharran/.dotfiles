@@ -13,6 +13,10 @@ pkgs.mkShellNoCC {
     cargo 
     nodejs_22
     go
+    hack-font
+    fd
+    bat
+    fzf
   ];
 
   shellHook = ''

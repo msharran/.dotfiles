@@ -98,3 +98,5 @@ source $ZSH/oh-my-zsh.sh
 for file in $HOME/.config/zsh/end-*.sh; do
     source $file
 done
+
+if [ -e /home/fedora/.nix-profile/etc/profile.d/nix.sh ]; then . /home/fedora/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

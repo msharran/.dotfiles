@@ -9,10 +9,8 @@ Plug 'tpope/vim-repeat'      -- Repeat plugin maps
 Plug 'tpope/vim-surround'    -- Surround text with brackets, quotes, etc.
 Plug 'tpope/vim-unimpaired'  -- Pairs of useful mappings
 Plug 'numToStr/Comment.nvim' -- Comment lines
-Plug 'stevearc/oil.nvim'     -- File explorer
 
 -- Looks
-Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 Plug 'sainnhe/gruvbox-material'
 Plug 'nvim-tree/nvim-web-devicons' -- Icons for plugins
 Plug 'folke/which-key.nvim'        -- Keybindings helper
