@@ -18,8 +18,4 @@ pkgs.mkShellNoCC {
     bat
     fzf
   ];
-
-  shellHook = ''
-    fish 
-  '';
 }
