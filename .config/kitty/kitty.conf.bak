@@ -6,7 +6,7 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      Hack 
+font_family      SauceCodePro Nerd Font 
 bold_font        auto
 italic_font      auto 
 bold_italic_font auto
@@ -25,10 +25,8 @@ bold_italic_font auto
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 16
+font_size 18
 #: Font size (in pts).
-
-modify_font cell_height 110%
 
 # force_ltr no
 
@@ -1894,7 +1892,7 @@ tab_bar_min_tabs 1
 
 # map kitty_mod+s  paste_from_selection
 # map shift+insert paste_from_selection
-map kitty_mod+s
+map kitty_mod+s 
 
 #: Pass selection to program
 
@@ -2011,7 +2009,7 @@ map kitty_mod+s
 
 #: New window
 
-map kitty_mod+enter launch --cwd=current
+map kitty_mod+enter new_window 
 # map cmd+enter       new_window
 
 #::  You can open a new kitty window running an arbitrary program, for
@@ -2022,7 +2020,7 @@ map kitty_mod+enter launch --cwd=current
 #::  You can open a new window with the current working directory set
 #::  to the working directory of the current window using::
 
-#::      map ctrl+alt+enter launch --cwd=current
+map ctrl+alt+enter launch --cwd=current
 
 #::  You can open a new window that is allowed to control kitty via
 #::  the kitty remote control facility with launch --allow-remote-
@@ -2541,7 +2539,7 @@ map cmd+t       new_tab_with_cwd
 #: }}}
 
 # BEGIN_KITTY_THEME
-# Gruvbox Material Dark Soft
+# Gruvbox Material Light Soft
 include current-theme.conf
 # END_KITTY_THEME
 

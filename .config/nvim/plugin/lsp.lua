@@ -37,9 +37,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.tbl_extend('force', opts, { desc = "Show references" }))
         vim.keymap.set("n", "gI", function() vim.lsp.buf.implementation() end,
             vim.tbl_extend('force', opts, { desc = "Show implementations" }))
-        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end,
+        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end,
             vim.tbl_extend('force', opts, { desc = "Next Diagnostic" }))
-        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end,
+        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end,
             vim.tbl_extend('force', opts, { desc = "Previous Diagnostic" }))
 
         -- l stands for LSP

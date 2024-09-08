@@ -1,6 +1,18 @@
 local vim = vim
 local Plug = vim.fn['plug#']
 
+vim.cmd [[
+function! s:install_plugins()
+  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    PlugInstall --sync | q
+    echom 'Plugins installed successfully, restart neovim to apply configuration changes.'
+  endif
+endfunction
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * call s:install_plugins()
+]]
+
 vim.call('plug#begin')
 
 -- Editor
@@ -9,6 +21,9 @@ Plug 'tpope/vim-repeat'      -- Repeat plugin maps
 Plug 'tpope/vim-surround'    -- Surround text with brackets, quotes, etc.
 Plug 'tpope/vim-unimpaired'  -- Pairs of useful mappings
 Plug 'numToStr/Comment.nvim' -- Comment lines
+
+-- Notes
+Plug 'vimwiki/vimwiki'
 
 -- Looks
 Plug 'sainnhe/gruvbox-material'
@@ -48,9 +63,6 @@ Plug 'mfussenegger/nvim-dap' -- Debugger
 Plug 'leoluz/nvim-dap-go'
 Plug "rcarriga/nvim-dap-ui"
 Plug 'nvim-neotest/nvim-nio'
-
--- Presenting nvim
-Plug 'sotte/presenting.nvim'
 
 -- Kitty
 Plug 'fladson/vim-kitty'

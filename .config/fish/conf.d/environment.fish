@@ -16,7 +16,7 @@ set -gx PATH $PATH $HOME/.npm-global/bin
 set -gx PATH $PATH $HOME/.rvm/bin
 
 # Java
-# set -gx PATH $PATH $(/usr/libexec/java_home -v 11)
+set -gx PATH $PATH $(/usr/libexec/java_home -v 11)
 
 # Python
 pyenv init - | source
