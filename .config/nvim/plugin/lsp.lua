@@ -64,8 +64,6 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "rust_analyzer",
         "gopls",
-        "solargraph",
-        "rubocop",
         "pylsp",
         "vimls",
         "yamlls",

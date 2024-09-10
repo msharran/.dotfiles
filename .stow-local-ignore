@@ -9,3 +9,4 @@ Installfile
 .*\.bkp
 .tmux/plugins
 .dotfiles/.gitmodules
+linux

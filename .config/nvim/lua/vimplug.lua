@@ -24,6 +24,8 @@ Plug 'numToStr/Comment.nvim' -- Comment lines
 
 -- Notes
 Plug 'vimwiki/vimwiki'
+Plug 'MeanderingProgrammer/render-markdown.nvim'
+Plug('iamcco/markdown-preview.nvim', { ['do'] = ':call mkdp#util#install()', ['for'] = { 'markdown', 'vim-plug' } })
 
 -- Looks
 Plug 'sainnhe/gruvbox-material'
