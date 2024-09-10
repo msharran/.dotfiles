@@ -3,6 +3,7 @@ set -gx PATH $PATH /opt/homebrew/bin
 set -gx PATH $PATH $HOME/.local/bin 
 
 # Go
+set -gx PATH $PATH $HOME/.local/go/bin 
 set -gx GOPATH $HOME/go
 set -gx PATH $PATH $GOROOT/bin
 set -gx PATH $PATH $GOPATH/bin
@@ -16,17 +17,22 @@ set -gx PATH $PATH $HOME/.npm-global/bin
 set -gx PATH $PATH $HOME/.rvm/bin
 
 # Java
-set -gx PATH $PATH $(/usr/libexec/java_home -v 11)
+if type -q /usr/libexec/java_home
+    set -gx PATH $PATH $(/usr/libexec/java_home -v 11)
+end
 
 # Python
-pyenv init - | source
+# if pyenv is installed
+if type -q pyenv
+    pyenv init - | source
+end
 
 # Deno 
-set -gx PATH $PATH /Users/sharranm/.deno
+set -gx PATH $PATH $HOME/.deno
 set -gx PATH $PATH $DENO_INSTALL/bin
 
 # Linkerd
-set -gx PATH $PATH /Users/sharranm/.linkerd2/bin
+set -gx PATH $PATH $HOME/.linkerd2/bin
 
 # k8s
 set -gx PATH $PATH $HOME/.krew/bin
@@ -62,6 +68,13 @@ set -gx FZF_DEFAULT_OPTS "--height 40% --layout reverse --border"
 # Less options, set colors and line numbers
 set -gx LESS '--chop-long-lines --RAW-CONTROL-CHARS'
 
-zoxide init fish | source
+if type -q zoxide 
+    zoxide init fish | source
+end
 
-direnv hook fish | source
+if type -q direnv
+    direnv hook fish | source
+end
+
+# Snap for linux
+set -gx PATH $PATH /snap/bin

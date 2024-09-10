@@ -3,7 +3,7 @@ function awsid
 end
 
 function awsunset
-    set -e $(env | grep AWS_ | cut -d= -f1)
+    set -e (env | grep AWS_ | cut -d= -f1)
 end
 
 function awsprofile
