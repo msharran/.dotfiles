@@ -18,7 +18,7 @@ set -gx PATH $PATH $HOME/.rvm/bin
 
 # Java
 if type -q /usr/libexec/java_home
-    set -gx PATH $PATH $(/usr/libexec/java_home -v 11)
+    set -gx PATH $PATH (/usr/libexec/java_home -v 11)
 end
 
 # Python
