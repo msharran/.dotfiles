@@ -4,3 +4,4 @@ auth.json
 /.warp/launch_configurations/*.yaml
 /.config/dlv
 .tmux/plugins
+/.config/iterm2
