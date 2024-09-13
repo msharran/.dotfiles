@@ -3,8 +3,6 @@
 [user]
     name = Sharran 
     email = sharran.murali@gmail.com
-[commit]
-    template = /Users/sharranm/.stCommitMsg
 [url "git@bitbucket.org:"]
     insteadOf = https://bitbucket.org/
 [includeIf "gitdir:~/projects/work/"]
