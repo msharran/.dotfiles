@@ -5,3 +5,5 @@ auth.json
 /.config/dlv
 .tmux/plugins
 /.config/iterm2
+/.config/go
+>>>>>>> 1440766 (centos)
