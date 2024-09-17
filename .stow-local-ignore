@@ -1,4 +1,5 @@
 .git
+.gitignore
 .*\.md
 LICENSE
 Makefile
