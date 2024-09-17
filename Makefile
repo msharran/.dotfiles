@@ -4,7 +4,7 @@ setup:
 
 .PHONY: ls
 ls:
-	ls -lhat ~ | grep -w .dotfiles
+	ls -lhat ~ | grep ^l | grep -w .dotfiles
 
 .PHONY: dryrun
 dryrun:
