@@ -1,5 +1,3 @@
-vim.cmd [[nmap <leader>gs <CMD>:tab Git<CR>]]
-
 require('gitlinker').setup({ mappings = nil })
 vim.cmd [[
 nmap <leader>gy <CMD>lua require"gitlinker".get_buf_range_url("n", {})<CR>

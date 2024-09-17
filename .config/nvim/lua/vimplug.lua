@@ -24,7 +24,6 @@ Plug 'numToStr/Comment.nvim' -- Comment lines
 
 -- Notes
 Plug 'vimwiki/vimwiki'
-Plug 'MeanderingProgrammer/render-markdown.nvim'
 Plug('iamcco/markdown-preview.nvim', { ['do'] = ':call mkdp#util#install()', ['for'] = { 'markdown', 'vim-plug' } })
 
 -- Looks
@@ -37,7 +36,6 @@ Plug 'folke/zen-mode.nvim'         -- Zen mode
 Plug 'ibhagwan/fzf-lua'            -- FZF
 
 -- Git plugins
-Plug 'tpope/vim-fugitive'      -- Git commands
 Plug 'ruifm/gitlinker.nvim'    -- Open github links
 Plug 'lewis6991/gitsigns.nvim' -- Git signs
 
