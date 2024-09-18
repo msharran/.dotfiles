@@ -3,7 +3,7 @@
 -- Keeping it minimal with vimwiki. Inspired 
 -- by https://papereditor.app
 vim.cmd [[
-let g:vimwiki_list = [{'path': '~/notes/',
+let g:vimwiki_list = [{'path': '~/Dropbox/',
                       \ 'syntax': 'markdown', 'ext': 'md'}]
 ]]
 
