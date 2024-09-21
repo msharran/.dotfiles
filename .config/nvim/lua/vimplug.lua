@@ -27,7 +27,6 @@ Plug 'vimwiki/vimwiki'
 Plug('iamcco/markdown-preview.nvim', { ['do'] = ':call mkdp#util#install()', ['for'] = { 'markdown', 'vim-plug' } })
 
 -- Looks
-Plug 'sainnhe/gruvbox-material'
 Plug 'nvim-tree/nvim-web-devicons' -- Icons for plugins
 Plug 'folke/which-key.nvim'        -- Keybindings helper
 Plug 'norcalli/nvim-colorizer.lua' -- Colorizer

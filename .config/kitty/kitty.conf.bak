@@ -1,6 +1,6 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
-#: Fonts {{{
+#: Fonts 
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
@@ -25,7 +25,7 @@ bold_italic_font auto
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 18
+font_size 15
 #: Font size (in pts).
 
 # force_ltr no
@@ -246,9 +246,9 @@ font_size 18
 #: problem try setting text_fg_override_threshold to 0 to see if this
 #: is the cause of the problem.
 
-#: }}}
+#: 
 
-#: Cursor customization {{{
+#: Cursor customization 
 
 # cursor #cccccc
 
@@ -307,9 +307,9 @@ font_size 18
 #: Stop blinking cursor after the specified number of seconds of
 #: keyboard inactivity. Set to zero to never stop blinking.
 
-#: }}}
+#: 
 
-#: Scrollback {{{
+#: Scrollback 
 
 scrollback_lines 10000
 
@@ -330,7 +330,7 @@ scrollback_lines 10000
 #: one which means fully opaque, aka visible. Set to a value between
 #: zero and one to make the indicator less visible.
 
-scrollback_pager less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER
+scrollback_pager less --chop-long-lines --RAW-CONTROL-CHARS 
 
 #: Program with which to view scrollback in a new window. The
 #: scrollback buffer is passed as STDIN to this program. If you change
@@ -384,9 +384,9 @@ scrollback_pager less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER
 #: platforms such as macOS and Wayland. Use negative numbers to change
 #: scroll direction.
 
-#: }}}
+#: 
 
-#: Mouse {{{
+#: Mouse 
 
 # mouse_hide_wait 3.0
 
@@ -540,7 +540,7 @@ copy_on_select no
 
 #: The default shape of the mouse pointer when dragging across text.
 
-#: Mouse actions {{{
+#: Mouse actions 
 
 #: Mouse buttons can be mapped to perform arbitrary actions. The
 #: syntax is:
@@ -696,11 +696,11 @@ copy_on_select no
 #::  Requires shell integration
 #::  <https://sw.kovidgoyal.net/kitty/shell-integration/> to work.
 
-#: }}}
+#: 
 
-#: }}}
+#: 
 
-#: Performance tuning {{{
+#: Performance tuning 
 
 # repaint_delay 10
 
@@ -730,9 +730,9 @@ copy_on_select no
 #: monitor. With a very high speed mouse/high keyboard repeat rate,
 #: you may notice some slight input latency. If so, set this to no.
 
-#: }}}
+#: 
 
-#: Terminal bell {{{
+#: Terminal bell 
 
 enable_audio_bell no
 
@@ -787,9 +787,9 @@ enable_audio_bell no
 #: be removed if Linux ever provides desktop-agnostic support for
 #: setting system sound themes.
 
-#: }}}
+#: 
 
-#: Window layout {{{
+#: Window layout 
 
 # remember_window_size  yes
 # initial_window_width  640
@@ -984,9 +984,9 @@ hide_window_decorations titlebar-and-corners
 #: want confirmation when closing individual windows, you can map the
 #: close_window_with_confirmation action.
 
-#: }}}
+#: 
 
-#: Tab bar {{{
+#: Tab bar 
 
 tab_bar_edge top
 
@@ -1149,9 +1149,9 @@ tab_bar_min_tabs 1
 #: margins the default color is chosen to match the background color
 #: of the neighboring tab.
 
-#: }}}
+#: 
 
-#: Color scheme {{{
+#: Color scheme 
 
 # foreground #dddddd
 # background #000000
@@ -1248,7 +1248,7 @@ tab_bar_min_tabs 1
 #: to be used unchanged. Note that these colors can be overridden by
 #: the program running in the terminal.
 
-#: The color table {{{
+#: The color table 
 
 #: The 256 terminal colors. There are 8 basic colors, each color has a
 #: dull and bright version, for the first 16 colors. You can set the
@@ -1318,11 +1318,11 @@ tab_bar_min_tabs 1
 
 #: Color for marks of type 3 (violet)
 
-#: }}}
+#: 
 
-#: }}}
+#: 
 
-#: Advanced {{{
+#: Advanced 
 
 # shell .
 
@@ -1677,9 +1677,9 @@ tab_bar_min_tabs 1
 #: an "Actions" menu in the macOS global menubar. Sub-menus can be
 #: created by adding more levels separated by the :: characters.
 
-#: }}}
+#: 
 
-#: OS specific tweaks {{{
+#: OS specific tweaks 
 
 # wayland_titlebar_color system
 
@@ -1801,9 +1801,9 @@ tab_bar_min_tabs 1
 #: Changing this option by reloading the config is not supported, it
 #: will not have any effect.
 
-#: }}}
+#: 
 
-#: Keyboard shortcuts {{{
+#: Keyboard shortcuts 
 
 #: Keys are identified simply by their lowercase Unicode characters.
 #: For example: a for the A key, [ for the left square bracket key,
@@ -1870,7 +1870,7 @@ tab_bar_min_tabs 1
 #: cause all invocations of the hints kitten to have the --hints-
 #: offset=0 option applied.
 
-#: Clipboard {{{
+#: Clipboard 
 
 #: Copy to clipboard
 
@@ -1911,9 +1911,9 @@ map kitty_mod+s
 
 #::      map kitty_mod+y new_window less @selection
 
-#: }}}
+#: 
 
-#: Scrolling {{{
+#: Scrolling 
 
 #: Scroll line up
 
@@ -2003,9 +2003,9 @@ map kitty_mod+s
 #::  Requires shell integration
 #::  <https://sw.kovidgoyal.net/kitty/shell-integration/> to work.
 
-#: }}}
+#: 
 
-#: Window management {{{
+#: Window management 
 
 #: New window
 
@@ -2051,24 +2051,18 @@ map ctrl+alt+enter launch --cwd=current
 
 # map kitty_mod+w close_window
 # map shift+cmd+d close_window
-map kitty_mod+w
-map shift+cmd+d  
-map kitty_mod+d close_window
 
 #: Next window
 
 # map kitty_mod+] next_window
-map kitty_mod+] 
 
 #: Previous window
 
 # map kitty_mod+[ previous_window
-map kitty_mod+[ 
 
 #: Move window forward
 
 # map kitty_mod+f move_window_forward
-map kitty_mod+f 
 
 #: Move window backward
 
@@ -2150,9 +2144,9 @@ map kitty_mod+`
 
 #::  Works like focus_visible_window above, but swaps the window.
 
-#: }}}
+#: 
 
-#: Tab management {{{
+#: Tab management 
 
 #: Next tab
 
@@ -2207,9 +2201,9 @@ map cmd+t       new_tab_with_cwd
 #: rather than at the end of the tabs list, use::
 
 #:     map ctrl+t new_tab !neighbor [optional cmd to run]
-#: }}}
+#: 
 
-#: Layout management {{{
+#: Layout management 
 
 #: Next layout
 
@@ -2231,9 +2225,9 @@ map cmd+t       new_tab_with_cwd
 #: stack layout::
 
 #:     map ctrl+alt+z toggle_layout stack
-#: }}}
+#: 
 
-#: Font sizes {{{
+#: Font sizes 
 
 #: You can change the font size for all top-level kitty OS windows at
 #: a time or only the current one.
@@ -2268,9 +2262,9 @@ map cmd+t       new_tab_with_cwd
 #: size::
 
 #:     map kitty_mod+f6 change_font_size current 10.0
-#: }}}
+#: 
 
-#: Select and act on visible text {{{
+#: Select and act on visible text 
 
 #: Use the hints kitten to select text and either pass it to an
 #: external program or insert it into the terminal or copy it to the
@@ -2336,9 +2330,9 @@ map cmd+t       new_tab_with_cwd
 #: The hints kitten has many more modes of operation that you can map
 #: to different shortcuts. For a full description see hints kitten
 #: <https://sw.kovidgoyal.net/kitty/kittens/hints/>.
-#: }}}
+#: 
 
-#: Miscellaneous {{{
+#: Miscellaneous 
 
 #: Show documentation
 
@@ -2534,12 +2528,12 @@ map cmd+t       new_tab_with_cwd
 
 # map cmd+q quit
 
-#: }}}
+#: 
 
-#: }}}
+#: 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Material Light Soft
+# Aquarium Dark
 include current-theme.conf
 # END_KITTY_THEME
 
