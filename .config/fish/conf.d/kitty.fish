@@ -8,7 +8,9 @@ function ls
     # if gls is in PATH, use it, else fallback to ls
     if command -v gls > /dev/null 
         gls --hyperlink=auto --color=auto $argv
+    else if test "$(uname -o)" = "GNU/Linux"
+        /bin/ls --hyperlink=auto --color=auto $argv
     else
-        command ls --color=auto $argv
+        ls --color=auto $argv
     end
 end
