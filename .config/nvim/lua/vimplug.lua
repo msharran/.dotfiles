@@ -29,7 +29,6 @@ Plug('iamcco/markdown-preview.nvim', { ['do'] = ':call mkdp#util#install()', ['f
 -- Looks
 Plug 'nvim-tree/nvim-web-devicons' -- Icons for plugins
 Plug 'folke/which-key.nvim'        -- Keybindings helper
-Plug 'norcalli/nvim-colorizer.lua' -- Colorizer
 Plug 'folke/todo-comments.nvim'    -- TODO, FIXME, etc. comment highlights
 Plug 'folke/zen-mode.nvim'         -- Zen mode
 Plug 'ibhagwan/fzf-lua'            -- FZF

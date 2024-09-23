@@ -3,6 +3,5 @@ if has('termguicolors')
     set termguicolors
 endif
 
-set background=dark
-
-colorscheme default 
+let g:rehash256 = 1
+colorscheme molokai
