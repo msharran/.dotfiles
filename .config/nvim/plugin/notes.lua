@@ -1,6 +1,6 @@
 -- Vimwiki
 -- Not using any Markdown rendering plugin,
--- Keeping it minimal with vimwiki. Inspired 
+-- Keeping it minimal with vimwiki. Inspired
 -- by https://papereditor.app
 vim.cmd [[
 let g:vimwiki_list = [{'path': '~/Dropbox/',
