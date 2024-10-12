@@ -1,3 +1,6 @@
+let g:mapleader = " "
+let g:maplocalleader = ","
+
 local vim = vim
 local Plug = vim.fn['plug#']
 
@@ -24,8 +27,6 @@ Plug 'numToStr/Comment.nvim' -- Comment lines
 
 -- Notes
 Plug 'vimwiki/vimwiki'
-Plug('iamcco/markdown-preview.nvim', { ['do'] = ':call mkdp#util#install()', ['for'] = { 'markdown', 'vim-plug' } })
-Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 -- Looks
 Plug 'nvim-tree/nvim-web-devicons' -- Icons for plugins
@@ -33,6 +34,7 @@ Plug 'folke/which-key.nvim'        -- Keybindings helper
 Plug 'folke/todo-comments.nvim'    -- TODO, FIXME, etc. comment highlights
 Plug 'folke/zen-mode.nvim'         -- Zen mode
 Plug 'ibhagwan/fzf-lua'            -- FZF
+Plug 'junegunn/seoul256.vim'
 
 -- Git plugins
 Plug 'ruifm/gitlinker.nvim'    -- Open github links
