@@ -25,6 +25,7 @@ Plug 'numToStr/Comment.nvim' -- Comment lines
 -- Notes
 Plug 'vimwiki/vimwiki'
 Plug('iamcco/markdown-preview.nvim', { ['do'] = ':call mkdp#util#install()', ['for'] = { 'markdown', 'vim-plug' } })
+Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 -- Looks
 Plug 'nvim-tree/nvim-web-devicons' -- Icons for plugins

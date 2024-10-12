@@ -153,10 +153,10 @@ alt-ctrl-l = 'move-workspace-to-monitor --wrap-around next'
 alt-ctrl-h = 'move-workspace-to-monitor --wrap-around prev'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
+alt-shift-semicolon = 'mode service'
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -187,6 +187,10 @@ if.app-id = 'com.apple.Safari'
 run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
 if.app-id = 'com.utmapp.UTM'
 run = 'move-node-to-workspace V'
 
@@ -204,3 +208,4 @@ run = 'move-node-to-workspace Z'
 
 [workspace-to-monitor-force-assignment]
 Z = 'built-in'                   # Case insensitive regex substring
+S = 'built-in'                   # Case insensitive regex substring

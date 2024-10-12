@@ -1,4 +1,4 @@
-function ssh
+function s
     kitten ssh $argv
 end
 
