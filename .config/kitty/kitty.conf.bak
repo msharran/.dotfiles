@@ -6,7 +6,8 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      Monaco
+# https://github.com/thep0y/monaco-nerd-font/releases/tag/v0.2.1
+font_family      Monaco Nerd Font Mono
 bold_font        auto
 italic_font      auto 
 bold_italic_font auto
@@ -2535,6 +2536,6 @@ include custom-maps.conf
 
 
 # BEGIN_KITTY_THEME
-# GitHub Dark
+# Tokyo Night
 include current-theme.conf
 # END_KITTY_THEME
