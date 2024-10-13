@@ -36,6 +36,8 @@ Plug 'ibhagwan/fzf-lua'            " FZF
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+Plug 'vim-airline/vim-airline'
 
 " Git plugins
 Plug 'ruifm/gitlinker.nvim'    " Open github links

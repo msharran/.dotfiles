@@ -7,4 +7,6 @@ endif
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-colorscheme seoul256
+" let g:seoul256_background = 235
+" colorscheme seoul256
+colorscheme embark
