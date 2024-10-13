@@ -34,6 +34,8 @@ Plug 'folke/which-key.nvim'        " Keybindings helper
 Plug 'folke/todo-comments.nvim'    " TODO, FIXME, etc. comment highlights
 Plug 'ibhagwan/fzf-lua'            " FZF
 Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 " Git plugins
 Plug 'ruifm/gitlinker.nvim'    " Open github links

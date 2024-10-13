@@ -3,5 +3,8 @@ if has('termguicolors')
     set termguicolors
 endif
 
-let g:seoul256_background = 235
+" = Goyo + Limelight for ZenMode = 
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 colorscheme seoul256
