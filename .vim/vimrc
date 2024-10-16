@@ -1,0 +1,4 @@
+" = Defaults before plugins =
+let g:mapleader = " "
+let g:maplocalleader = ","
+filetype plugin indent on
