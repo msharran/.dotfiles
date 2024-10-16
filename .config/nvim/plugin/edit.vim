@@ -3,12 +3,6 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup = 'IncSearch', timeout = 500 }
 augroup END
 
-" Add current directory and its subdirectories to path
-" for downward file search using gf or :find
-" Very useful for navigating through a project
-set path+=**
-nnoremap ge :find *
-nnoremap gE :find .**/*
 nnoremap gb :ls<CR>:b<Space>
 cnoremap <C-s> *
 
@@ -19,19 +13,6 @@ cnoremap <C-s> *
 "   :noh<CR> - Clear the search highlight
 nnoremap <leader>e :let @z=expand("%:t")<CR>:Ex<CR>/<C-R>z<CR>:noh<CR>
 " Refer ftplugin/netrw.vim for related mappings
-
-" Grep
-" Use Rg as grepprg
-set grepprg=rg\ --vimgrep\ --hidden
-" Search word
-nnoremap gw :grep -w "<C-R><C-W>"<CR>
-" Search WORD 
-nnoremap gW :grep -w "<C-R><C-A>"<CR>
-" Pre type :grep command
-nnoremap gs :grep ""<Left>
-" Search selected text. Yank selection to `s` register and search for it.
-vnoremap gs "sy:grep "<C-R>s"<CR>`>
-vnoremap gw "sy:grep -w "<C-R>s"<CR>`>
 
 " Autocommand to open quickfix window automatically
 " when quickfix list is populated.
