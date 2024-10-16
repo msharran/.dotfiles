@@ -21,8 +21,8 @@ let g:lightline = {
       \ }
 
 " = Goyo + Limelight for ZenMode = 
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+autocmd! User GoyoEnter set number relativenumber
+" autocmd! User GoyoLeave Limelight!
 
 colorscheme embark
 ]]
