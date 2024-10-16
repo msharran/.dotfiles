@@ -3,5 +3,5 @@ let g:mapleader = " "
 let g:maplocalleader = ","
 
 " == Plugins ==
-lua require("sharran.plugins.vimplug")
-lua require("sharran.plugins.settings")
+lua require("custom.plugins.vimplug")
+lua require("custom.plugins.settings")

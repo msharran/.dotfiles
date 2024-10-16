@@ -1,7 +1,0 @@
-require("sharran.plugins.settings.completion")
-require("sharran.plugins.settings.copilot")
-require("sharran.plugins.settings.fzf-lua")
-require("sharran.plugins.settings.git")
-require("sharran.plugins.settings.looks")
-require("sharran.plugins.settings.lsp")
-require("sharran.plugins.settings.vimwiki")
