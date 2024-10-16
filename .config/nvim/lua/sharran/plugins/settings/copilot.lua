@@ -5,7 +5,7 @@ require('copilot').setup({
         auto_trigger = true,
         debounce = 75,
         keymap = {
-            accept = "<tab>",
+            accept = "<C-b><C-b>",
             accept_word = false,
             accept_line = false,
             next = "<C-b><C-n>",
