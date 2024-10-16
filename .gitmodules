@@ -16,24 +16,9 @@
 [submodule ".vim/pack/tpope/start/vim-commentary"]
 	path = .vim/pack/tpope/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule ".vim/pack/vimwiki/start/vimwiki"]
-	path = .vim/pack/vimwiki/start/vimwiki
-	url = https://github.com/vimwiki/vimwiki
 [submodule ".vim/pack/embark-theme/start/vim"]
 	path = .vim/pack/embark-theme/start/vim
 	url = https://github.com/embark-theme/vim
-[submodule ".vim/pack/junegunn/start/goyo.vim"]
-	path = .vim/pack/junegunn/start/goyo.vim
-	url = https://github.com/junegunn/goyo.vim
-[submodule ".vim/pack/junegunn/start/limelight.vim"]
-	path = .vim/pack/junegunn/start/limelight.vim
-	url = https://github.com/junegunn/limelight.vim
-[submodule ".vim/pack/fatih/start/vim-go"]
-	path = .vim/pack/fatih/start/vim-go
-	url = https://github.com/fatih/vim-go
-[submodule ".vim/pack/fladson/start/vim-kitty"]
-	path = .vim/pack/fladson/start/vim-kitty
-	url = https://github.com/fladson/vim-kitty
 [submodule ".vim/pack/itchyny/start/lightline.vim"]
 	path = .vim/pack/itchyny/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim

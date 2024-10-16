@@ -6,6 +6,7 @@ Plug 'nvim-lua/plenary.nvim' " Lua lib used by many plugins
 Plug 'tpope/vim-repeat'      " Repeat plugin maps
 Plug 'tpope/vim-surround'    " Surround text with brackets, quotes, etc.
 Plug 'tpope/vim-unimpaired'  " Pairs of useful mappings
+Plug 'tpope/vim-sensible'    " Sensible defaults 
 Plug 'numToStr/Comment.nvim' " Comment lines
 
 " Notes
@@ -13,13 +14,11 @@ Plug 'vimwiki/vimwiki'
 
 " Looks
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
-Plug 'folke/tokyonight.nvim'
 Plug 'nvim-tree/nvim-web-devicons' " Icons for plugins
 Plug 'folke/which-key.nvim'        " Keybindings helper
 Plug 'folke/todo-comments.nvim'    " TODO, FIXME, etc. comment highlights
 Plug 'ibhagwan/fzf-lua'            " FZF
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
 
 
@@ -48,4 +47,14 @@ Plug 'onsails/lspkind.nvim' " nvim-cmp pictograms
 Plug 'hrsh7th/nvim-cmp'     " Autocompletion plugin
 
 call plug#end()
+
+" == Auto Install on VimEnter ==
+function! s:install_plugins()
+  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    PlugInstall --sync | q
+    echom 'Plugins installed successfully, restart Neovim.'
+  endif
+endfunction
+
+autocmd VimEnter * call s:install_plugins()
 ]]
