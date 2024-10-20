@@ -13,6 +13,7 @@ Plug 'numToStr/Comment.nvim' " Comment lines
 Plug 'vimwiki/vimwiki'
 
 " Looks
+Plug 'nvim-tree/nvim-tree.lua'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'nvim-tree/nvim-web-devicons' " Icons for plugins
 Plug 'folke/which-key.nvim'        " Keybindings helper

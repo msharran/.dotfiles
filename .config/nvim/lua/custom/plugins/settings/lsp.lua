@@ -57,7 +57,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local lspconfig = require("lspconfig")
 local capabilities = vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(),
     require("cmp_nvim_lsp").default_capabilities())
-require("fidget").setup()
+require("fidget").setup({})
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
@@ -66,7 +66,6 @@ require("mason-lspconfig").setup({
         "gopls",
         "pylsp",
         "vimls",
-        "yamlls",
         "jsonls",
     },
     handlers = {

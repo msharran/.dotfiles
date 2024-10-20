@@ -15,13 +15,12 @@ if has('termguicolors') " Important
     set termguicolors
 endif
 
-" Lightline
+" = Goyo = 
+autocmd! User GoyoEnter set number relativenumber
+
 let g:lightline = {
       \ 'colorscheme': 'embark',
       \ }
-
-" = Goyo + Limelight for ZenMode = 
-autocmd! User GoyoEnter set number relativenumber
-
+let g:embark_terminal_italics = 1
 colorscheme embark
 ]]

@@ -2,6 +2,10 @@ function s
     kitten ssh $argv
 end
 
+function icat
+    kitten icat $argv
+end
+
 # If hyperlinks are printed, kitty can use hint kitten to
 # take some actions on them like opening it in a browser
 function ls
