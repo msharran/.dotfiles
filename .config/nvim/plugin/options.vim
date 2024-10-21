@@ -17,4 +17,3 @@ set colorcolumn=80
 set termguicolors
 set timeout
 set timeoutlen=300
-set showmatch " match indication
