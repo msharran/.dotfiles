@@ -9,9 +9,6 @@ Plug 'tpope/vim-unimpaired'  " Pairs of useful mappings
 Plug 'tpope/vim-sensible'    " Sensible defaults 
 Plug 'numToStr/Comment.nvim' " Comment lines
 
-" Notes
-Plug 'vimwiki/vimwiki'
-
 " Looks
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
@@ -19,9 +16,8 @@ Plug 'nvim-tree/nvim-web-devicons' " Icons for plugins
 Plug 'folke/which-key.nvim'        " Keybindings helper
 Plug 'folke/todo-comments.nvim'    " TODO, FIXME, etc. comment highlights
 Plug 'ibhagwan/fzf-lua'            " FZF
-Plug 'junegunn/goyo.vim'
-Plug 'itchyny/lightline.vim'
-
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Git plugins
 Plug 'ruifm/gitlinker.nvim'    " Open github links

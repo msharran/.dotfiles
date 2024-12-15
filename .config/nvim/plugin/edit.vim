@@ -5,6 +5,9 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup = 'IncSearch', timeout = 500 }
 augroup END
 
+" = Go to Normal mode when jj is pressed =
+inoremap jj <Esc>
+
 " = Buffer =
 nnoremap gb :ls<CR>:b<Space>
 cnoremap <C-s> *
@@ -20,10 +23,10 @@ nnoremap <leader>D ms:r !date "+\%d-\%m-\%Y"<CR>dW<Esc>`sp
 nnoremap <leader>T ms:r !date "+\%d-\%m-\%Y \%H:\%M \%p \%Z"<CR>dW<Esc>`sp
 
 " = Resize panes =
-nnoremap <leader>= :resize +5<CR>
-nnoremap <leader>- :resize -5<CR>
-nnoremap <leader>. :vertical resize +5<CR>
-nnoremap <leader>, :vertical resize -5<CR>
+nnoremap <leader>wt :resize +5<CR>
+nnoremap <leader>ws :resize -5<CR>
+nnoremap <leader>ww :vertical resize +5<CR>
+nnoremap <leader>wn :vertical resize -5<CR>
 
 " = Quickfix =
 " Autocommand to open quickfix window automatically

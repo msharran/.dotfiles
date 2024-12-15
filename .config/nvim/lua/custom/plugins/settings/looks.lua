@@ -15,12 +15,8 @@ if has('termguicolors') " Important
     set termguicolors
 endif
 
-" = Goyo = 
-autocmd! User GoyoEnter set number relativenumber
-
-let g:lightline = {
-      \ 'colorscheme': 'embark',
-      \ }
-let g:embark_terminal_italics = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='embark'
+let g:airline_powerline_fonts = 1
 colorscheme embark
 ]]

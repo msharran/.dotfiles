@@ -17,3 +17,5 @@ set colorcolumn=80
 set termguicolors
 set timeout
 set timeoutlen=300
+set t_Co=256
+set cursorline
