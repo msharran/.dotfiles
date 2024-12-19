@@ -10,12 +10,10 @@ Plug 'tpope/vim-sensible'    " Sensible defaults
 Plug 'numToStr/Comment.nvim' " Comment lines
 
 " Looks
-Plug 'nvim-tree/nvim-tree.lua'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'nvim-tree/nvim-web-devicons' " Icons for plugins
 Plug 'folke/which-key.nvim'        " Keybindings helper
 Plug 'folke/todo-comments.nvim'    " TODO, FIXME, etc. comment highlights
-Plug 'ibhagwan/fzf-lua'            " FZF
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 

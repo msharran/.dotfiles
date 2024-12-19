@@ -19,3 +19,7 @@ set timeout
 set timeoutlen=300
 set t_Co=256
 set cursorline
+
+" set path to search for files, ** means search recursively
+" also search hidden dir
+set path+=**
