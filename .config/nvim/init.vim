@@ -1,6 +1,6 @@
 " = Defaults before plugins =
 let g:mapleader = " "
-let g:maplocalleader = ","
+let g:maplocalleader = "\\"
 
 " == Plugins ==
 lua require("custom.plugins.vimplug")
