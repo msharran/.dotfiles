@@ -212,6 +212,13 @@ run = 'move-node-to-workspace C'
 if.app-id = 'com.apple.reminders'
 run = 'move-node-to-workspace R'
 
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = 'move-node-to-workspace N'
+
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [ "layout tiling", 'move-node-to-workspace T' ]
 
 # [workspace-to-monitor-force-assignment]
 # Z = 'built-in'                   # Case insensitive regex substring

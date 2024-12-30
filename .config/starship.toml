@@ -4,9 +4,11 @@ $username\
 [](bg:#ABF8F7 fg:#63F2F1)\
 $git_branch\
 $git_status\
-[](fg:#ABF8F7 bg:#F48FB1)\
+[](bg:#7676FF fg:#ABF8F7)\
+$directory\
+[](fg:#7676FF bg:#D4BFFF)\
 $kubernetes\
-[ ](fg:#F48FB1 )\
+[ ](fg:#D4BFFF )\
 """
 
 # Disable the blank line at the start of the prompt
@@ -22,7 +24,10 @@ format = '[$user ]($style)'
 disabled = false
 
 [directory]
-disabled = true
+style = "bg:#7676FF fg:#2D2B40 bold"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
 
 [c]
 symbol = " "
@@ -30,7 +35,7 @@ style = "bg:#F02E6E fg:#2D2B40"
 format = '[ $symbol ($version) ]($style)'
 
 [kubernetes]
-style = "bg:#F48FB1 fg:#2D2B40"
+style = "bg:#D4BFFF fg:#2D2B40"
 format = '[ $symbol$context ]($style)'
 disabled = false
 
