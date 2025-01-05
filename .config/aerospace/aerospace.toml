@@ -118,13 +118,6 @@ alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-0 = 'workspace 0'
-alt-b = 'workspace B'
-alt-t = 'workspace T'
-alt-s = 'workspace S'
-alt-n = 'workspace N'
-alt-z = 'workspace Z'
-alt-c = 'workspace C'
-alt-r = 'workspace R'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -137,13 +130,6 @@ alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
 alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 alt-shift-0 = ['move-node-to-workspace 0', 'workspace 0']
-alt-shift-b = ['move-node-to-workspace B', 'workspace B']
-alt-shift-t = ['move-node-to-workspace T', 'workspace T']
-alt-shift-s = ['move-node-to-workspace S', 'workspace S']
-alt-shift-n = ['move-node-to-workspace N', 'workspace N']
-alt-shift-z = ['move-node-to-workspace Z', 'workspace Z']
-alt-shift-c = ['move-node-to-workspace C', 'workspace C']
-alt-shift-r = ['move-node-to-workspace R', 'workspace R']
 
 # See: https://nikitabobko.github.io/AeroSpace/goodness#disable-hide-app
 cmd-h = []
@@ -178,47 +164,43 @@ alt-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace B'
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = 'move-node-to-workspace B'
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
-run = 'move-node-to-workspace B'
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'com.brave.Browser'
-run = 'move-node-to-workspace B'
-
-[[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
-run = ['layout tiling' , 'move-node-to-workspace T']
-
-[[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace S'
-
-[[on-window-detected]]
-if.app-id = 'us.zoom.xos'
-run = 'move-node-to-workspace Z'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.iCal'
-run = 'move-node-to-workspace C'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.reminders'
-run = 'move-node-to-workspace R'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.Notes'
-run = 'move-node-to-workspace N'
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id="com.mitchellh.ghostty"
-run= [ "layout tiling", 'move-node-to-workspace T' ]
+run= [ "layout tiling", 'move-node-to-workspace 2' ]
+
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = ['layout tiling' , 'move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 0'
+
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = 'move-node-to-workspace 0'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = 'move-node-to-workspace 9'
 
 # [workspace-to-monitor-force-assignment]
 # Z = 'built-in'                   # Case insensitive regex substring
