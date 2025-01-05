@@ -10,7 +10,7 @@ Plug 'tpope/vim-sensible'    " Sensible defaults
 Plug 'numToStr/Comment.nvim' " Comment lines
 
 " Looks
-Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+Plug 'ellisonleao/gruvbox.nvim'
 Plug 'nvim-tree/nvim-web-devicons' " Icons for plugins
 Plug 'folke/which-key.nvim'        " Keybindings helper
 Plug 'vim-airline/vim-airline'

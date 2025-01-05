@@ -12,7 +12,8 @@ if has('termguicolors') " Important
 endif
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='embark'
+let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
-colorscheme embark
+set background=dark " or light if you want light mode
+colorscheme gruvbox
 ]]

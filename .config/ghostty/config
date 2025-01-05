@@ -1,5 +1,6 @@
 font-size = 15
 window-save-state = always
+theme = GruvboxDark
 
 # Keybindings
 keybind = super+shift+j=goto_split:bottom
@@ -11,8 +12,6 @@ keybind = super+ctrl+j=resize_split:down,50
 keybind = super+ctrl+k=resize_split:up,50
 keybind = super+ctrl+h=resize_split:left,50
 keybind = super+ctrl+l=resize_split:right,50
-
-keybind = super+shift+f=toggle_quick_terminal
 
 # write selection to a file
 keybind = "super+shift+p=write_selection_file:paste"
