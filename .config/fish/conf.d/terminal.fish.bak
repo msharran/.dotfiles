@@ -1,7 +1,3 @@
-function ssh
-    kitten ssh $argv
-end
-
 function icat
     kitten icat $argv
 end
@@ -15,6 +11,6 @@ function ls
     else if test "$(uname -o)" = "GNU/Linux"
         /bin/ls --hyperlink=auto --color=auto $argv
     else
-        ls --color=auto $argv
+        ls $argv
     end
 end

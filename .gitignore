@@ -7,3 +7,5 @@ auth.json
 /.config/iterm2
 /.config/go
 /.config/swiftpm
+.local/share
+.local/state
