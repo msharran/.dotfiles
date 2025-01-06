@@ -9,3 +9,4 @@ auth.json
 /.config/swiftpm
 .local/share
 .local/state
+.DS_Store
