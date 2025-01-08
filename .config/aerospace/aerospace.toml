@@ -172,27 +172,27 @@ run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id="com.mitchellh.ghostty"
-run= [ "layout tiling", 'move-node-to-workspace 4' ]
+run= [ "layout tiling", 'move-node-to-workspace 2' ]
 
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
-run = ['layout tiling' , 'move-node-to-workspace 4']
+run = ['layout tiling' , 'move-node-to-workspace 2']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace 2'
+run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
 if.app-id = 'us.zoom.xos'
-run = 'move-node-to-workspace 2'
+run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.reminders'
-run = 'move-node-to-workspace 3'
+run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Notes'
-run = 'move-node-to-workspace 3'
+run = 'move-node-to-workspace 5'
 
 # [workspace-to-monitor-force-assignment]
 # Z = 'built-in'                   # Case insensitive regex substring
