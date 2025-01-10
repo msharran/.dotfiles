@@ -9,6 +9,7 @@ Plug 'tpope/vim-unimpaired'  " Pairs of useful mappings
 Plug 'tpope/vim-sensible'    " Sensible defaults 
 Plug 'numToStr/Comment.nvim' " Comment lines
 Plug 'ctrlpvim/ctrlp.vim'    " Fuzzy file finder
+Plug 'nvim-tree/nvim-tree.lua' " File explorer
 
 " Looks
 Plug 'ellisonleao/gruvbox.nvim'

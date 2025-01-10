@@ -1,3 +1,4 @@
 vim.cmd [[
-nnoremap <C-p> <cmd>:CtrlP<cr>
+let g:ctrlp_show_hidden = 1
+nnoremap <C-p> <cmd>:CtrlP<CR>
 ]]
