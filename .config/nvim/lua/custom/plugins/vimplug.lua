@@ -12,8 +12,8 @@ Plug 'ctrlpvim/ctrlp.vim'    " Fuzzy file finder
 Plug 'nvim-tree/nvim-tree.lua' " File explorer
 
 " Looks
-Plug 'ellisonleao/gruvbox.nvim'
 Plug 'rose-pine/neovim', { 'as': 'rose-pine' }
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons' " Icons for plugins
 Plug 'folke/which-key.nvim'        " Keybindings helper
 

@@ -1,11 +1,4 @@
-require("which-key").setup()
-require('Comment').setup()
-
 vim.cmd [[
-nnoremap <leader>? :WhichKey<CR>
-
-" == Color Scheme ==
-
 " Colorscheme depends on plugins and needs to be set after plugins are loaded
 if has('termguicolors') " Important
     set termguicolors

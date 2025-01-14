@@ -14,8 +14,7 @@ require("nvim-tree").setup({
 })
 
 vim.cmd [[
-nnoremap <Leader>ec :NvimTreeClose<CR>
-nnoremap <Leader>ee :NvimTreeFindFile<CR>
+nnoremap <Leader>ee :NvimTreeFindFileToggle<CR>
 " Resize
 nnoremap <Leader>el :NvimTreeResize +10<CR>
 nnoremap <Leader>eh :NvimTreeResize -10<CR>
