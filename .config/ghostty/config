@@ -1,6 +1,6 @@
 font-size = 15
 window-save-state = always
-theme = GruvboxDark
+theme = rose-pine-dawn
 
 # Keybindings
 keybind = super+shift+j=goto_split:bottom

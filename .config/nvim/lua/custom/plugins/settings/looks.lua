@@ -11,9 +11,6 @@ if has('termguicolors') " Important
     set termguicolors
 endif
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='gruvbox'
-let g:airline_powerline_fonts = 1
-set background=dark " or light if you want light mode
-colorscheme gruvbox
+set background=light " or light if you want light mode
+colorscheme rose-pine
 ]]

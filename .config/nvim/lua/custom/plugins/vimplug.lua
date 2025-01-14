@@ -6,17 +6,16 @@ Plug 'nvim-lua/plenary.nvim' " Lua lib used by many plugins
 Plug 'tpope/vim-repeat'      " Repeat plugin maps
 Plug 'tpope/vim-surround'    " Surround text with brackets, quotes, etc.
 Plug 'tpope/vim-unimpaired'  " Pairs of useful mappings
-Plug 'tpope/vim-sensible'    " Sensible defaults 
+Plug 'tpope/vim-sensible'    " Sensible defaults
 Plug 'numToStr/Comment.nvim' " Comment lines
 Plug 'ctrlpvim/ctrlp.vim'    " Fuzzy file finder
 Plug 'nvim-tree/nvim-tree.lua' " File explorer
 
 " Looks
 Plug 'ellisonleao/gruvbox.nvim'
+Plug 'rose-pine/neovim', { 'as': 'rose-pine' }
 Plug 'nvim-tree/nvim-web-devicons' " Icons for plugins
 Plug 'folke/which-key.nvim'        " Keybindings helper
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " Git plugins
 Plug 'ruifm/gitlinker.nvim'    " Open github links
@@ -32,7 +31,6 @@ Plug 'folke/neodev.nvim'                                           " Nvim config
 Plug 'fatih/vim-go'                                                " Adds go specific features like :GoAddStructTags, :GoBuild (quickfix support)
 Plug 'neovim/nvim-lspconfig'                                       " Neovim LSP
 Plug 'zbirenbaum/copilot.lua'                                      " Github Copilot
-Plug 'fladson/vim-kitty'
 
 " Completion plugins
 Plug 'hrsh7th/cmp-nvim-lsp' " LSP completion

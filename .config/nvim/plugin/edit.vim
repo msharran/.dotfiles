@@ -38,3 +38,5 @@ augroup quickfix
     autocmd QuickFixCmdPost [^l]* cwindow
     autocmd QuickFixCmdPost l* lwindow
 augroup END
+
+noremap <leader>w :w<CR>
