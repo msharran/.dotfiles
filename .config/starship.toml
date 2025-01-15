@@ -5,19 +5,10 @@ $git_branch\
 $git_status\
 $fill\
 $c\
-$elixir\
-$elm\
 $golang\
-$haskell\
-$java\
-$julia\
 $nodejs\
-$nim\
 $rust\
-$scala\
-$conda\
-$python\
-$time\n  \
+$python\n\
 [󱞪](fg:iris) \
 """
 
@@ -69,7 +60,7 @@ diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foa
 behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
 
 [time]
-disabled = false
+disabled = true
 format = "[](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)"
 style = "bg:overlay fg:rose"
 time_format = "%I:%M%P"
