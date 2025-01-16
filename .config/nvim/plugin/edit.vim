@@ -9,8 +9,7 @@ augroup END
 inoremap jj <Esc>
 
 " = Buffer =
-nnoremap gb :ls<CR>:b<Space>
-cnoremap <C-s> *
+nnoremap <leader>b :b 
 
 " = Remove highlight  =
 nnoremap Q :noh<CR>
