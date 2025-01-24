@@ -2,35 +2,6 @@
 
 ### Installation
 
-To install all the required dependent packages
-like neovim, fzf etc, run the `install.rb`
-file which installs packages declared in 
-`Installfile`
-
-1. Clone the repo into your home directory.
-
-> [!NOTE]
-> I am using Github CLI, you can use any means like http or ssh
-
-```bash
-gh repo clone msharran/.dotfiles
-```
-
-2. Run the installer
-
-```bash
-cd .dotfiles
-# use ruby version > 3
-bundle install
-ruby install.rb
-```
-
---- 
-
-**Skip if above worked**
-
-## Manual Installation 
-
 To create symlinks for the dotfiles in this repo
 to your home directory without using install.rb,
 Install all the dependencies mentioned in the Installfile

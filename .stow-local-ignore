@@ -11,3 +11,4 @@ Installfile
 .tmux/plugins
 .dotfiles/.gitmodules
 linux
+install.sh
