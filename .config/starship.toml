@@ -1,0 +1,11 @@
+[docker_context]
+disabled = true
+
+[direnv]
+disabled = false
+
+[git_state]
+disabled = true
+
+[zig]
+symbol = '⚡️ '

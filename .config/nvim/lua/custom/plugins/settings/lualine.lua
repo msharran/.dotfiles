@@ -1,10 +1,6 @@
 require('lualine').setup({
     options = {
-        theme = 'rose-pine',
+        theme = 'auto',
         disabled_filetypes = { 'ctrlp' },
-    },
-    tabline = {
-        lualine_a = { { 'buffers', mode = 4 } },
-        lualine_z = { 'tabs' }
     },
 })

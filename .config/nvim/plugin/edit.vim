@@ -5,9 +5,6 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup = 'IncSearch', timeout = 500 }
 augroup END
 
-" = Go to Normal mode when jj is pressed =
-inoremap jj <Esc>
-
 " = Buffer =
 nnoremap <leader>b :b 
 
@@ -39,3 +36,7 @@ augroup quickfix
 augroup END
 
 noremap <leader>w :w<CR>
+noremap { {zz
+noremap } }zz
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
