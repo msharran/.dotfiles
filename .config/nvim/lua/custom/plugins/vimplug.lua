@@ -23,7 +23,6 @@ Plug 'lewis6991/gitsigns.nvim' " Git signs
 
 " LSP plugins
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }  " Treesitter
-Plug 'nvim-treesitter/nvim-treesitter-context'                     " Function context
 Plug 'williamboman/mason.nvim'                                     " LSP Installer
 Plug 'williamboman/mason-lspconfig.nvim'                           " LSP Installer
 Plug 'j-hui/fidget.nvim'                                           " Loading spinner

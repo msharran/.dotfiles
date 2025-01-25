@@ -10,7 +10,7 @@ require('nvim-treesitter.configs').setup {
 
     -- automatically install missing parsers when entering buffer
     -- recommendation: set to false if you don't have `tree-sitter` cli installed locally
-    auto_install = true,
+    auto_install = false,
 
     highlight = {
         -- `false` will disable the whole extension
@@ -60,14 +60,7 @@ local capabilities = vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_clie
 require("fidget").setup({})
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = {
-        "lua_ls",
-        "rust_analyzer",
-        "gopls",
-        "pylsp",
-        "vimls",
-        "jsonls",
-    },
+    ensure_installed = {},
     handlers = {
         function(server_name) -- default handler (optional)
             lspconfig[server_name].setup {
