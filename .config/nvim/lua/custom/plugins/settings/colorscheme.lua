@@ -4,6 +4,6 @@ if has('termguicolors') " Important
     set termguicolors
 endif
 
-set background=dark " or light if you want light mode
-colorscheme monokai_soda
+" set background=dark " or light if you want light mode
+colorscheme onehalfdark
 ]]

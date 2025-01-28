@@ -1,6 +1,6 @@
 font-size = 15
 window-save-state = always
-theme = Monokai Soda
+theme = OneHalfDark
 
 # Keybindings
 keybind = super+shift+j=goto_split:bottom
