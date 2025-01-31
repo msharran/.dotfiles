@@ -9,7 +9,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      // "shift shift": "file_finder::Toggle",
     }
   },
   {
@@ -21,7 +21,9 @@
   {
     "context": "vim_mode == normal",
     "bindings": {
-      "g r": "editor::Rename"
+      "g r": "editor::Rename",
+      "g o": "outline_panel::ToggleFocus",
+      "g e": "diagnostics::Deploy"
     }
   }
 ]

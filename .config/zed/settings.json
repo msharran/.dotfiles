@@ -9,17 +9,17 @@
 {
   "assistant": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3-5-sonnet"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
     },
     "version": "2"
   },
   "features": {
-    "inline_completion_provider": "copilot"
+    "inline_completion_provider": "zed"
   },
   "ssh_connections": [
     {
-      "host": "local",
+      "host": "vm",
       "projects": [
         {
           "paths": ["~/projects/play/codingchallenges.fyi"]
@@ -30,7 +30,7 @@
           ]
         }
       ],
-      "nickname": "ubuntu"
+      "nickname": "vm"
     }
   ],
   "theme": {
