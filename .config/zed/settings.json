@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_font_size": 15.0,
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -22,11 +23,48 @@
       "host": "vm",
       "projects": [
         {
-          "paths": ["~/projects/play/codingchallenges.fyi"]
+          "paths": [
+            "~/.dotfiles"
+          ]
+        },
+        {
+          "paths": [
+            "~/.dotfiles-private"
+          ]
+        },
+        {
+          "paths": [
+            "~/projects/play/codingchallenges.fyi"
+          ]
         },
         {
           "paths": [
             "~/projects/play/codingchallenges.fyi/redis-server/zig-redis-server"
+          ]
+        },
+        {
+          "paths": [
+            "~/projects/play/labs"
+          ]
+        },
+        {
+          "paths": [
+            "~/projects/work/caterpillar"
+          ]
+        },
+        {
+          "paths": [
+            "~/projects/work/caterpillar-cli"
+          ]
+        },
+        {
+          "paths": [
+            "~/projects/work/caterpillar-ops-configs"
+          ]
+        },
+        {
+          "paths": [
+            "~/projects/work/caterpillar/master"
           ]
         }
       ],
