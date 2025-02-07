@@ -11,4 +11,8 @@ auth.json
 !.local/share
 .local/share/*
 !.local/share/nvim
+.local/share/nvim/*
+!.local/share/nvim/site
+.local/share/nvim/site/*
+!.local/share/nvim/site/autoload
 .DS_Store

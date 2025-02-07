@@ -8,7 +8,13 @@ $git_status\
 $cmd_duration\
 $line_break\
 $python\
+$kubernetes\
 $character"""
+
+[kubernetes]
+disabled = false
+format = "[$context:$namespace]($style) "
+style = "bright-black"
 
 [directory]
 style = "blue"
