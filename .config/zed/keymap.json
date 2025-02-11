@@ -7,24 +7,25 @@
 // from the command palette.
 [
   {
-    "context": "Workspace && vim_mode == normal",
+    "context": "Workspace",
     "bindings": {
-      "ctrl-t ctrl-f": "workspace::ToggleZoom",
+      "ctrl-s ctrl-f": "workspace::ToggleZoom",
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-t ctrl-h": "pane::SplitLeft",
-      "ctrl-t ctrl-l": "pane::SplitRight",
-      "ctrl-t ctrl-j": "pane::SplitDown",
-      "ctrl-t ctrl-k": "pane::SplitUp"
+      "ctrl-s ctrl-h": "pane::SplitLeft",
+      "ctrl-s ctrl-l": "pane::SplitRight",
+      "ctrl-s ctrl-j": "pane::SplitDown",
+      "ctrl-s ctrl-k": "pane::SplitUp",
+      "ctrl-s ctrl-n": "workspace::NewFile"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
       "cmd-j": "workspace::ToggleBottomDock",
-      "ctrl-t ctrl-n": "workspace::NewTerminal"
+      "ctrl-s ctrl-n": "workspace::NewTerminal"
     }
   },
   {
