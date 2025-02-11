@@ -34,6 +34,11 @@
         },
         {
           "paths": [
+            "~/projects"
+          ]
+        },
+        {
+          "paths": [
             "~/projects/play/codingchallenges.fyi"
           ]
         },
@@ -44,7 +49,17 @@
         },
         {
           "paths": [
+            "~/projects/play/ingress-nginx"
+          ]
+        },
+        {
+          "paths": [
             "~/projects/play/labs"
+          ]
+        },
+        {
+          "paths": [
+            "~/projects/work/acropolis/codepipeline"
           ]
         },
         {
