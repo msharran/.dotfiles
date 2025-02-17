@@ -16,7 +16,7 @@
     "version": "2"
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "inline_completion_provider": "zed"
   },
   "ssh_connections": [
     {
@@ -59,11 +59,6 @@
         },
         {
           "paths": [
-            "~/projects/play/zap"
-          ]
-        },
-        {
-          "paths": [
             "~/projects/work/acropolis/codepipeline"
           ]
         },
@@ -91,7 +86,11 @@
       "nickname": "vm"
     }
   ],
-  "theme": "Material Icon Theme",
+  "theme": {
+    "mode": "light",
+    "light": "One Dark",
+    "dark": "One Dark"
+  },
   "vim_mode": true,
   "relative_line_numbers": true
 }

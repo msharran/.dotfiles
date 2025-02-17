@@ -1,5 +1,6 @@
 font-size = 15
 window-save-state = always
+font-family = BlexMono Nerd Font
 
 # Keybindings
 keybind = super+shift+j=goto_split:bottom
