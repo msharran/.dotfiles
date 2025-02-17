@@ -14,11 +14,8 @@
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
-      "space e e": "project_panel::ToggleFocus",
-      "space e o": "outline_panel::ToggleFocus",
-      "space e h": "workspace::ToggleLeftDock",
-      "space e l": "workspace::ToggleRightDock",
-      "space e j": "workspace::ToggleBottomDock"
+      "\\ e e": "project_panel::ToggleFocus",
+      "\\ e o": "outline_panel::ToggleFocus"
     }
   },
   {
@@ -33,7 +30,7 @@
     }
   },
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "VimControl",
     "bindings": {
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown",
