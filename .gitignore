@@ -2,11 +2,14 @@
 auth.json
 *.log
 /.warp/launch_configurations/*.yaml
-/.config/dlv
 .tmux/plugins
+
+/.config/dlv
 /.config/iterm2
 /.config/go
 /.config/swiftpm
+/.config/gh
+
 .local/*
 !.local/share
 .local/share/*
