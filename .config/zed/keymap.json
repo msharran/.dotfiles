@@ -23,6 +23,10 @@
       "cmd-k cmd-w": ["pane::CloseAllItems", { "close_pinned": false }],
       "cmd-k cmd-o": ["pane::CloseInactiveItems", { "close_pinned": false }],
       "shift-escape": null,
+      "cmd-alt-j": "vim::ResizePaneDown",
+      "cmd-alt-k": "vim::ResizePaneUp",
+      "cmd-alt-h": "vim::ResizePaneLeft",
+      "cmd-alt-l": "vim::ResizePaneRight",
 
       // copy
       "cmd-k c p": "workspace::CopyPath",
