@@ -183,11 +183,11 @@ run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'dev.zed.Zed'
-run = 'move-node-to-workspace minus'
+run = 'move-node-to-workspace 0'
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace 5'
+run = 'move-node-to-workspace minus'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'

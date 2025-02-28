@@ -5,5 +5,5 @@ if has('termguicolors') " Important
 endif
 
 " set background=dark " or light if you want light mode
-colorscheme onehalfdark
+colorscheme onedark
 ]]

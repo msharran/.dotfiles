@@ -7,17 +7,21 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "theme": "One Dark",
+  "theme": "Zed Legacy: Rosé Pine",
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "model": "claude-3-5-sonnet-latest"
     },
     "version": "2"
   },
   "features": {
     "edit_prediction_provider": "zed"
   },
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "buffer_font_size": 16,
+  "ui_font_size": 16,
   "ssh_connections": [
     {
       "host": "vm",
@@ -66,8 +70,5 @@
       ],
       "nickname": "ubuntu"
     }
-  ],
-  "vim_mode": true,
-  "relative_line_numbers": true,
-  "buffer_font_size": 14
+  ]
 }

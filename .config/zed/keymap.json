@@ -27,6 +27,7 @@
       "cmd-alt-k": "vim::ResizePaneUp",
       "cmd-alt-h": "vim::ResizePaneLeft",
       "cmd-alt-l": "vim::ResizePaneRight",
+      "cmd-alt-0": "vim::ResetPaneSizes",
 
       // copy
       "cmd-k c p": "workspace::CopyPath",
@@ -52,7 +53,8 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-t ctrl-n": "workspace::NewFile"
+      "cmd-k space": "terminal::ToggleViMode",
+      "cmd-k cmd-k": ["terminal::SendKeystroke", "ctrl-l"]
     }
   },
   {
