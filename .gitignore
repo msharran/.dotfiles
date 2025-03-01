@@ -1,10 +1,11 @@
-/.config/containers
 auth.json
 *.log
 /.warp/launch_configurations/*.yaml
 .tmux/plugins
 
+/.config/containers
 /.config/dlv
+/.config/btop
 /.config/iterm2
 /.config/go
 /.config/swiftpm
