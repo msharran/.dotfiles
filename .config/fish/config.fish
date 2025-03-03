@@ -22,7 +22,7 @@ set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx XDG_STATE_HOME $HOME/.local/state
 
 # Editor
-set -gx EDITOR 'zed'
+set -gx EDITOR 'nvim'
 set -gx NVIMHOME "$XDG_CONFIG_HOME/nvim"
 
 # FZF
