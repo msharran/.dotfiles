@@ -10,6 +10,8 @@ auth.json
 /.config/go
 /.config/swiftpm
 /.config/gh
+/.config/zed/conversations
+/.config/zed/prompts
 
 .local/*
 !.local/share
