@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
+# Don't have same projects in both HOST and GUEST.
+# Currently there is no way to find that, but it also
+# forces me to not edit and leave one uncommitted.
+
 list_projects() {
-    echo "$HOME/.ssh"
     echo "$HOME/.dotfiles"
     echo "$HOME/.dotfiles-private"
 }
 
 list_remote_projects() {
     local vm_home=$(ssh vm 'echo $HOME')
-    ssh vm "fd . $vm_home/projects/work $vm_home/projects/play -d 1 -t d"
-    ssh vm "fd . $vm_home/projects/play/codingchallenges.fyi -d 2 -t d"
-    ssh vm "fd . $vm_home/projects/play/labs -d 2 -t d"
+    ssh vm "fd . $vm_home/projects/work $vm_home/projects/play -d 1 -t d; \
+        fd . $vm_home/projects/play/labs $vm_home/projects/play/codingchallenges.fyi -d 2 -t d"
     echo "$vm_home/.ssh"
-    echo "$vm_home/.dotfiles"
-    echo "$vm_home/.dotfiles-private"
 }
 
 projects=$(list_projects)
@@ -33,13 +33,21 @@ if [ -z "$selected" ]; then
     exit 1
 fi
 
-# Check if it's a remote project
-if [[ $selected == vm:* ]]; then
-    # Extract the actual path by removing the "vm: " prefix
-    remote_path=${selected#vm: }
-    # Use zed with ssh:// protocol
-    zed -a "ssh://vm$remote_path"
+selected_basename=$(basename "$selected")
+
+# If Zed window already exists, focus it
+aerospace_window_id=$(aerospace list-windows --all | grep -w Zed | grep -w $selected_basename | awk '{print $1}')
+if [[ $? == 0 ]] && [[ -n "$aerospace_window_id" ]]; then
+    aerospace focus --window-id $aerospace_window_id
 else
-    # Local project
-    zed -a "$selected"
+    # Check if it's a remote project
+    if [[ $selected == vm:* ]]; then
+        # Extract the actual path by removing the "vm: " prefix
+        remote_path=${selected#vm: }
+        # Use zed with ssh:// protocol
+        zed --wait "ssh://vm$remote_path"
+    else
+        # Local project
+        zed --wait "$selected"
+    fi
 fi
