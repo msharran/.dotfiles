@@ -17,3 +17,5 @@ keybind = super+ctrl+l=resize_split:right,50
 # write selection to a file
 keybind = "super+shift+p=write_selection_file:paste"
 keybind = "super+shift+o=write_selection_file:open"
+
+# keybind = global:alt+shift+t=toggle_quick_terminal

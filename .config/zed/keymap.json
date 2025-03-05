@@ -9,41 +9,44 @@
   {
     "bindings": {
       // navigation
-      "cmd-shift-h": "workspace::ActivatePaneLeft",
-      "cmd-shift-l": "workspace::ActivatePaneRight",
-      "cmd-shift-k": "workspace::ActivatePaneUp",
-      "cmd-shift-j": "workspace::ActivatePaneDown",
+      "ctrl-shift-h": "workspace::ActivatePaneLeft",
+      "ctrl-shift-l": "workspace::ActivatePaneRight",
+      "ctrl-shift-k": "workspace::ActivatePaneUp",
+      "ctrl-shift-j": "workspace::ActivatePaneDown",
+      "ctrl-{": "pane::ActivatePrevItem",
+      "ctrl-}": "pane::ActivateNextItem",
 
       // pane
-      "cmd-k cmd-v": "pane::SplitRight",
-      "cmd-k cmd-s": "pane::SplitDown",
-      "cmd-k cmd-enter": "workspace::ToggleZoom",
-      "cmd-k cmd-e": ["pane::CloseItemsToTheLeft", { "close_pinned": false }],
-      "cmd-k cmd-y": ["pane::CloseItemsToTheRight", { "close_pinned": false }],
-      "cmd-k cmd-w": ["pane::CloseAllItems", { "close_pinned": false }],
-      "cmd-k cmd-o": ["pane::CloseInactiveItems", { "close_pinned": false }],
+      "ctrl-k v": "pane::SplitRight",
+      "ctrl-k s": "pane::SplitDown",
+      "ctrl-k enter": "workspace::ToggleZoom",
+      "ctrl-k e": ["pane::CloseItemsToTheLeft", { "close_pinned": false }],
+      "ctrl-k y": ["pane::CloseItemsToTheRight", { "close_pinned": false }],
+      "ctrl-k w": ["pane::CloseAllItems", { "close_pinned": false }],
+      "ctrl-k o": ["pane::CloseInactiveItems", { "close_pinned": false }],
       "shift-escape": null,
-      "cmd-alt-j": "vim::ResizePaneDown",
-      "cmd-alt-k": "vim::ResizePaneUp",
-      "cmd-alt-h": "vim::ResizePaneLeft",
-      "cmd-alt-l": "vim::ResizePaneRight",
-      "cmd-alt-0": "vim::ResetPaneSizes",
+      "ctrl-alt-j": "vim::ResizePaneDown",
+      "ctrl-alt-k": "vim::ResizePaneUp",
+      "ctrl-alt-h": "vim::ResizePaneLeft",
+      "ctrl-alt-l": "vim::ResizePaneRight",
+      "ctrl-alt-0": "vim::ResetPaneSizes",
 
       // copy
-      "cmd-k c p": "workspace::CopyPath",
-      "cmd-k c r": "workspace::CopyRelativePath",
-      "cmd-k c %": "editor::CopyFileName",
-      "cmd-k c l": "editor::CopyPermalinkToLine",
+      "ctrl-k c p": "workspace::CopyPath",
+      "ctrl-k c r": "workspace::CopyRelativePath",
+      "ctrl-k c %": "editor::CopyFileName",
+      "ctrl-k c l": "editor::CopyPermalinkToLine",
 
       // open
-      "cmd-k o l": "editor::OpenPermalinkToLine",
-      "cmd-k o k": "zed::OpenKeymap",
-      "cmd-k o m": "markdown::OpenPreviewToTheSide",
-      "cmd-k o M": "markdown::OpenPreview",
+      "ctrl-k o l": "editor::OpenPermalinkToLine",
+      "ctrl-k o k": "zed::OpenKeymap",
+      "ctrl-k o m": "markdown::OpenPreviewToTheSide",
+      "ctrl-k o M": "markdown::OpenPreview",
 
       // panel toggles
-      "cmd-shift-o": "outline_panel::ToggleFocus",
-      "cmd-shift-s": "outline::Toggle"
+      "ctrl-shift-o": "outline_panel::ToggleFocus",
+      "ctrl-shift-s": "outline::Toggle",
+      "ctrl-shift-e": "project_panel::ToggleFocus"
     }
   },
   {
@@ -53,8 +56,8 @@
   {
     "context": "Terminal",
     "bindings": {
-      "cmd-k space": "terminal::ToggleViMode",
-      "cmd-k cmd-k": ["terminal::SendKeystroke", "ctrl-l"]
+      "ctrl-k space": "terminal::ToggleViMode"
+      // "ctrl-k ctrl-k": ["terminal::SendKeystroke", "ctrl-l"]
     }
   },
   {
@@ -70,14 +73,12 @@
   },
   {
     "context": "Editor && mode == full && edit_prediction",
-    "use_key_equivalents": true,
     "bindings": {
       "shift-tab": "editor::NextEditPrediction"
     }
   },
   {
     "context": "Editor && !edit_prediction",
-    "use_key_equivalents": true,
     "bindings": {
       "shift-tab": "editor::ShowEditPrediction"
     }
@@ -90,7 +91,6 @@
   },
   {
     "context": "Editor && edit_prediction_conflict",
-    "use_key_equivalents": true,
     "bindings": {
       "shift-tab": "editor::AcceptEditPrediction"
     }
