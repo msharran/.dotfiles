@@ -1,4 +1,5 @@
 set -gx PATH $PATH $HOME/bin
+set -gx PATH $PATH $HOME/sbin
 set -gx PATH $PATH /opt/homebrew/bin
 set -gx PATH $PATH $HOME/.local/bin
 
