@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+list_projects() {
+    echo "$HOME/.ssh"
+    echo "$HOME/.dotfiles"
+    echo "$HOME/.dotfiles-private"
+}
+
+list_remote_projects() {
+    local vm_home=$(ssh vm 'echo $HOME')
+    ssh vm "fd . $vm_home/projects/work $vm_home/projects/play -d 1 -t d"
+    ssh vm "fd . $vm_home/projects/play/codingchallenges.fyi -d 2 -t d"
+    ssh vm "fd . $vm_home/projects/play/labs -d 2 -t d"
+    ssh vm "fd . $vm_home -d 1 -t d"
+    echo "$vm_home/.ssh"
+    echo "$vm_home/.dotfiles"
+    echo "$vm_home/.dotfiles-private"
+}
+
+projects=$(list_projects)
+remote_projects=$(list_remote_projects)
+
+# Add a prefix to remote projects to distinguish them
+remote_projects_with_prefix=$(echo "$remote_projects" | sed 's/^/vm: /')
+
+# Combine both lists
+all_projects=$(echo -e "${projects}\n${remote_projects_with_prefix}")
+
+# Choose a project with fzf
+selected=$(echo "$all_projects" | fzf)
+
+if [ -z "$selected" ]; then
+    echo "No project selected"
+    exit 1
+fi
+
+# Check if it's a remote project
+if [[ $selected == vm:* ]]; then
+    # Extract the actual path by removing the "vm: " prefix
+    remote_path=${selected#vm: }
+    # Use zed with ssh:// protocol
+    zed -a "ssh://vm$remote_path"
+else
+    # Local project
+    zed -a "$selected"
+fi
