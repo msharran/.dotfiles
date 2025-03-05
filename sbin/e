@@ -34,9 +34,13 @@ if [ -z "$selected" ]; then
 fi
 
 selected_basename=$(basename "$selected")
+aerospace_window_id=$(aerospace list-windows --all | grep -w Zed | grep -w "$selected_basename —" | head -n 1 | awk '{print $1}')
+# Example command output looks like
+# ❯ aerospace list-windows --all | grep -w Zed | grep -w .dotfiles
+# 5277 | Zed       | .dotfiles — e
+# 5302 | Zed       | .dotfiles-private — config
 
 # If Zed window already exists, focus it
-aerospace_window_id=$(aerospace list-windows --all | grep -w Zed | grep -w $selected_basename | awk '{print $1}')
 if [[ $? == 0 ]] && [[ -n "$aerospace_window_id" ]]; then
     aerospace focus --window-id $aerospace_window_id
 else

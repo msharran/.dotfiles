@@ -18,4 +18,6 @@ keybind = super+ctrl+l=resize_split:right,50
 keybind = "super+shift+p=write_selection_file:paste"
 keybind = "super+shift+o=write_selection_file:open"
 
-# keybind = global:alt+shift+t=toggle_quick_terminal
+keybind = global:super+shift+t=toggle_quick_terminal
+quick-terminal-animation-duration = 0
+quick-terminal-autohide = true
