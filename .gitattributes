@@ -1,0 +1,5 @@
+.gitattributes !filter !diff
+
+.ssh/id* filter=git-crypt diff=git-crypt
+.ssh/*pem filter=git-crypt diff=git-crypt
+.secure/* filter=git-crypt diff=git-crypt
