@@ -1,6 +1,6 @@
 # .dotfiles
 
-A MacOS-to-Linux development environment configured with dotfiles and secret management.
+A MacOS development environment configured with dotfiles and secret management.
 
 ## Philosophy
 
