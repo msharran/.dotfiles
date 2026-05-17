@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+grepprg=rg
+if !command -v "$grepprg" &>/dev/null; then
+    echo "Cannot find 'rg', fallback to grep" >&2
+    grepprg=grep
+fi
+
+list_projects() {
+    fd .  $HOME \
+    $HOME/root \
+    $HOME/root/work \
+    $HOME/root/play \
+    --min-depth 1 --max-depth 1 --type d
+    fd . \
+    $HOME/root/play/codingchallenges.fyi \
+    $HOME/root/play/protohackers.com \
+    $HOME/root/play/labs \
+    --min-depth 2 --max-depth 2 --type d
+}
+
+find_and_open_projects() {
+    projects=$(list_projects)
+    echo "$projects" >> /tmp/zed-sessioniser-projects.txt
+
+    # Choose a project with fzf
+    selected=$(echo "$projects" | fzf)
+
+    if [ -z "$selected" ]; then
+        echo "Empty selection, exiting loop"
+        exit 1
+    fi
+
+    selected_basename=$(basename "$selected")
+    aerospace_window_id=$(aerospace list-windows --all | $grepprg -w Zed | $grepprg -w "$selected_basename —" | head -n 1 | awk '{print $1}')
+    # Example command output looks like
+    # ❯ aerospace list-windows --all | rg -w Zed | rg -w aincrad
+    # 5277 | Zed       | aincrad — e
+    # 5302 | Zed       | .dotfiles-private — config
+
+    # If Zed window already exists, focus it
+    if [[ $? == 0 ]] && [[ -n "$aerospace_window_id" ]]; then
+        # NOTE: This command is slow, aerospace doesn't provide a way to tell if
+        # $aerospace_window_id is focused currently so that we can avoid
+        # running this command every time
+        aerospace focus --window-id $aerospace_window_id
+    else
+        zed "$selected"
+    fi
+}
+
+find_and_open_projects

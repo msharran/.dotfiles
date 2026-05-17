@@ -1,0 +1,18 @@
+lastupdatecheck: 0
+recentrepos:
+- /Users/sharranm/root/work/caterpillar-remove-autodocs
+- /Users/sharranm/root/work/caterpillar-services-eks
+- /Users/sharranm/aincrad
+- /Users/sharranm/root/play/codingchallenges.fyi
+- /Users/sharranm/root/work/infra-scripts
+- /Users/sharranm/root/work/acropolis
+- /Users/sharranm/root/work/caterpillar-ops-configs
+- /Users/sharranm/root/work/caterpillar
+- /Users/sharranm/root/play/labs
+- /Users/sharranm/root/work/caterpillar-api
+startuppopupversion: 5
+customcommandshistory:
+- git pull --rebase
+- git branch
+- git pull origin services-eks --rebase
+hidecommandlog: false

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Usage: t <optional dir, relative or absolute path>
+list_projects() {
+    fd . $HOME -d 1 -t d --hidden
+    fd . $HOME/root/work $HOME/root/play -d 1 -t d
+    fd . $HOME/root/play/labs $HOME/root/play/codingchallenges.fyi -d 2 -t d
+}
+
+# Parse optional argument
+if [ "$1" ]; then
+    # Argument is given
+    RESULT=$(cd $@ && pwd)
+else
+    # No argument is given. Use FZF
+    RESULT=$(list_projects | fzf)
+    if [ -z "$RESULT" ]; then
+        echo "No projects selected"
+        exit 1
+    fi
+fi
+
+# RESULT is a path
+SESSION=$(basename "$RESULT" | tr . - | tr ' ' - | tr ':' - | tr '[:upper:]' '[:lower:]')
+if ! tmux has-session -t=$SESSION 2> /dev/null; then
+    tmux new-session -d -s $SESSION -c "$RESULT"
+fi
+
+# Attach to session
+if [ -z "$TMUX" ]; then
+    tmux attach -t $SESSION
+else
+    tmux switch-client -t $SESSION
+fi

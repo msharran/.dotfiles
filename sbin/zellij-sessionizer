@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+source "$(dirname "$0")/functions.sh"
+if [[ $? -ne 0 ]]; then
+    exit 1
+fi
+
+SESSION_CWD=$(select_project_or_default $1)
+if [[ $? -ne 0 ]]; then
+    exit 1
+fi
+
+SESSION_NAME=$(basename "${SESSION_CWD}" | tr . _)
+if [[ $? -ne 0 ]]; then
+    exit 1
+fi
+
+OLD_SESSION_NAME=${ZELLIJ_SESSION_NAME}
+
+if zellij ls -s | grep -q "${SESSION_NAME}"; then
+    zellij attach "${SESSION_NAME}" -f # -f forces to run the already running command in all panes
+else
+    cd "${SESSION_CWD}"
+    zellij -s "${SESSION_NAME}"
+fi
+
+if [[ -z "${OLD_SESSION_NAME}" ]]; then
+    zellij kill-session "${OLD_SESSION_NAME}"
+fi
