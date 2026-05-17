@@ -1,7 +1,15 @@
 SHELL := /bin/bash
 
 .PHONY: install
-install: setup-dirs setup-brew stow-link
+install: private-clone private-install setup-dirs setup-brew stow-link
+
+.PHONY: private-clone
+private-clone:
+	[ -d ~/.dotfiles-private ] || gh repo clone msharran/.dotfiles-private ~/.dotfiles-private
+
+.PHONY: private-install
+private-install:
+	$(MAKE) -C ~/.dotfiles-private install
 
 setup-dirs:
 	mkdir -p ~/.local/bin ~/opt ~/.npm-global ~/go ~/.local/go ~/projects/work ~/projects/play

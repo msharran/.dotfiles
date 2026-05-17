@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## System Architecture
 
-**Aincrad** is a dotfiles repository for a MacOS-to-Linux development workflow. The architecture follows a host-guest pattern:
+**.dotfiles** is a dotfiles repository for a MacOS-to-Linux development workflow. The architecture follows a public-private repo split:
 
 - **Host OS**: MacOS on Apple Silicon
 - **Guest OS**: Ubuntu ARM Server via UTM virtualization
@@ -13,28 +13,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-### Bootstrap Commands
+### Install Commands
 ```bash
-# Bootstrap host (MacOS) - installs git-crypt, imports GPG keys
-make host/bootstrap
-
-# Bootstrap guest VM (Ubuntu) - requires EXPORTED_GPG_ZIP environment variable
-make vm/bootstrap
-
-# Copy secrets to VM (requires EXPORTED_GPG_ZIP path)
-make vm/copy-secrets
-
-# Install dotfiles with stow (unlocks git-crypt, creates symlinks, sets SSH permissions)
-make aincrad/install
+# Install public + private dotfiles (clones private repo if needed, unlocks git-crypt, creates symlinks)
+make install
 
 # Dry run installation (preview symlinks without creating them)
-make aincrad/dryrun
+make dryrun
 
 # Clean/uninstall symlinks
-make aincrad/clean
+make clean
 
 # List installed symlinks
-make aincrad/ls
+make ls
 ```
 
 ### Required Environment Variables

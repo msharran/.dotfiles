@@ -2,17 +2,15 @@
 
 ## Host
 
-**Clone Aincrad**
+**Clone .dotfiles**
 
 ```bash
-git clone https://github.com/msharran/aincrad.git
-cd aincrad
+git clone https://github.com/msharran/.dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 ```
 
 ### Bootstrap Host
 
 ```bash
-make host/bootstrap
+make install
 ```
-
-###
