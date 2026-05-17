@@ -5,3 +5,53 @@
 *~
 *.bkp
 .amp-write-meta
+
+# User State
+auth.json
+*.log
+/.warp/launch_configurations/*.yaml
+.tmux/plugins
+.uuid
+/tmp
+
+# Container and system configs
+/.config/containers
+/.config/btop
+/.config/iterm2
+/.config/go
+/.config/swiftpm
+/.config/gh
+/.config/ibus
+/.config/gtk-3.0
+/.config/evolution
+/.config/dconf
+/.config/uv
+
+# Zed: track only portable config files
+/.config/zed/*
+!/.config/zed/settings.json
+!/.config/zed/keymap.json
+!/.config/zed/tasks.json
+
+# Local and system files
+.local/*
+!.local/share
+.local/share/*
+!.local/share/nvim
+.local/share/nvim/*
+!.local/share/nvim/site
+.local/share/nvim/site/*
+!.local/share/nvim/site/autoload
+/.config/dlv/.dbg_history
+/.config/lazygit/state.yml
+
+# Local markdown and agent files
+*.local.md
+.claude/*
+!.claude/commands
+!.claude/instructions
+!.claude/skills
+!.claude/CLAUDE.md
+.gemini/*
+!.gemini/GEMINI.md
+.gemini-clipboard/
