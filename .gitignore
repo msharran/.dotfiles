@@ -1,2 +1,7 @@
 .DS_Store
 *.log
+*.bak
+*.orig
+*~
+*.bkp
+.amp-write-meta
