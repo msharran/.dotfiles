@@ -7,7 +7,9 @@ if !command -v "$grepprg" &>/dev/null; then
 fi
 
 list_projects() {
-    fd .  $HOME \
+    fd .  $HOME --hidden \
+    --min-depth 1 --max-depth 1 --type d
+    fd . \
     $HOME/root \
     $HOME/root/work \
     $HOME/root/play \
