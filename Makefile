@@ -32,3 +32,7 @@ dryrun:
 .PHONY: clean
 clean:
 	stow -v -D .
+
+.PHONY: private-clean
+private-clean:
+	$(MAKE) -C ~/.dotfiles-private clean
