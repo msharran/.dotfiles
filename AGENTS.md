@@ -1,128 +1,29 @@
-# CLAUDE.md
+# Repository Guidelines
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## Project Structure & Module Organization
+This repository contains the public half of a macOS dotfiles setup. Core configs live under [`.config/`](/Users/msharran/.dotfiles/.config), including `nvim`, `zed`, `ghostty`, `k9s`, and shell-related settings. Helper scripts live in [`sbin/`](/Users/msharran/.dotfiles/sbin). Operational notes and screenshots live in [`docs/`](/Users/msharran/.dotfiles/docs). Root-level files such as [`.gitconfig`](/Users/msharran/.dotfiles/.gitconfig), [`.tmux.conf`](/Users/msharran/.dotfiles/.tmux.conf), and terminfo files are symlinked into `$HOME` with GNU Stow. Private secrets and machine-specific config belong in `~/.dotfiles-private`, not here.
 
-## System Architecture
+## Build, Test, and Development Commands
+Use `make` targets instead of ad hoc Stow commands when possible:
 
-**.dotfiles** is a dotfiles repository for a MacOS-to-Linux development workflow. The architecture follows a public-private repo split:
+- `make install` clones `~/.dotfiles-private`, runs its install step, creates local directories, installs brew packages, and stows this repo.
+- `make dryrun` previews symlink changes with `stow -v -n .`.
+- `make stow-link` applies symlinks to `$HOME`.
+- `make clean` removes this repo's symlinks.
+- `make ls` lists active dotfile symlinks in `$HOME`.
 
-- **Host OS**: MacOS on Apple Silicon
-- **Guest OS**: Ubuntu ARM Server via UTM virtualization
-- **Network**: Emulated VLAN with SSH port forwarding (Host:2022 → Guest:22)
-- **Connection**: SSH via `ssh vm` using configuration in `.ssh/config`
+For Ruby linting support, install gems with `bundle install`; the `Gemfile` includes `rubocop`.
 
-## Development Commands
+## Coding Style & Naming Conventions
+Shell scripts in [`sbin/`](/Users/msharran/.dotfiles/sbin) should use `#!/usr/bin/env bash` unless a stricter shell is required. Follow existing shell style: small functions, straightforward control flow, and 4-space indentation inside blocks. Prefer descriptive kebab-case or lowercase names such as `warp-launch-config-generator.sh` and `zed-sessioniser`.
 
-### Install Commands
-```bash
-# Install public + private dotfiles (clones private repo if needed, unlocks git-crypt, creates symlinks)
-make install
+Keep configs scoped to the owning tool directory, and avoid committing ephemeral local state. Check [`.gitignore`](/Users/msharran/.dotfiles/.gitignore) before adding new files.
 
-# Dry run installation (preview symlinks without creating them)
-make dryrun
+## Testing Guidelines
+There is no formal automated test suite in this repo. Validate changes by running `make dryrun` before `make stow-link`, then open the affected tool locally and confirm behavior. For shell changes, run the script directly with a safe input path and, when applicable, lint Ruby helpers with `bundle exec rubocop`.
 
-# Clean/uninstall symlinks
-make clean
+## Commit & Pull Request Guidelines
+Recent history favors short, imperative commit subjects with optional scope prefixes, for example `sbin: Add mux` or `cleanup aerospace`. Keep subjects concise and focused on one change. PRs should describe the user-visible effect, note any manual setup required, and include screenshots only when updating UI-facing docs such as Zed or tmux images.
 
-# List installed symlinks
-make ls
-```
-
-### Required Environment Variables
-```bash
-# Path to exported GPG keys zip file (required for VM bootstrap)
-export EXPORTED_GPG_ZIP=~/Downloads/sharran-gpg-20250316T104202Z-001.zip
-
-# SSH host for VM connection (defaults to 'vm')
-export VM_SSH_HOST=vm
-```
-
-### Project/Session Management
-```bash
-# Terminal session switcher (tmux)
-t                    # fuzzy find and switch to project
-t ~/path/to/dir      # jump directly to specific path
-
-# Zed session switcher
-# Use Ctrl-S in Zed workspace to launch zed-sessioniser
-```
-
-## Configuration Structure
-
-### Core Configurations
-- `.config/starship.toml` - Starship prompt configuration
-- `.config/zed/` - Zed editor settings, keymaps, and tasks
-- `.config/nvim/` - Neovim configuration with custom Lua plugins
-- `.config/lazygit/` - Git UI configuration
-- `.config/ghostty/` - Terminal emulator configuration
-- `.config/aerospace/` - Tiling window manager for MacOS
-
-### Key Scripts
-- `sbin/tmux-sessioniser` - Project session management for tmux (aliased as `t`)
-- `sbin/zed-sessioniser` - Project session management for Zed
-- `sbin/zellij-sessionizer` - Project session management for Zellij
-- `sbin/nwm` - Network window manager utility
-- `sbin/warp-launch-config-generator.sh` - Warp terminal configuration generator
-- `bootstrap/vm.sh` - Ubuntu VM setup script with development tools
-- `bootstrap/import_gpg.sh` - GPG key import automation
-
-## Editor Integration
-
-### Zed Editor Tasks
-The following tasks are configured in `.config/zed/tasks.json`:
-- `claude-code` - Launch Claude Code CLI
-- `claude-code-continue` - Continue previous session
-- `claude-code-resume` - Resume previous session
-- `zed-sessioniser` - Project switcher (Ctrl-S)
-- `lazygit` - Git UI (Ctrl-B G)
-- `k9s stage/central` - Kubernetes management with AWS profiles
-
-### Key Bindings (Zed)
-- `Ctrl-S` - Project sessioniser
-- `Ctrl-B Ctrl-C` - Claude Code
-- `Ctrl-B G` - Lazygit
-- `Ctrl-H/J/K/L` - Pane navigation (vim-style)
-- `Ctrl-B Ctrl-{E/O/S}` - Toggle panels
-
-## Neovim Configuration
-
-Located in `.config/nvim/lua/custom/plugins/`:
-- LSP configuration with completion
-- Plugin management via vim-plug
-- Custom colorscheme and UI components
-- Git integration (fugitive, git signs)
-- File navigation (fzf-lua, neo-tree)
-- Productivity plugins (harpoon, which-key, todo-comments)
-
-## AWS/Kubernetes Workflow
-
-The repository includes AWS profile configurations:
-- `stage-headuser` - Stage environment access
-- `central-headuser` - Central account access
-
-Use `eval $(aws-okta-py env {profile})` before kubectl commands.
-
-## Git Security
-
-- SSH keys are encrypted using `git-crypt` with GPG
-- GPG keys are imported via bootstrap scripts
-- Use `git crypt unlock` to decrypt sensitive files
-- SSH key permissions are automatically set to 400 during installation
-- Requires EXPORTED_GPG_ZIP environment variable pointing to GPG key archive
-
-## VM Dependencies
-
-The VM bootstrap installs:
-- Development tools: git, make, curl, stow
-- CLI utilities: bat, fzf, zoxide, eza, ripgrep, btop
-- Neovim (compiled from source)
-- Starship prompt
-- Fish shell (set as default)
-
-## Network Configuration
-
-- VM uses UTM with Emulated VLAN networking mode
-- SSH port forwarding: Host:2022 → Guest:22
-- Connection via `ssh vm` (configured in `.ssh/config`)
-- Emulated VLAN mode ensures VM traffic routes through host VPN
-- Avoids connectivity issues with bridged networking mode
+## Security & Configuration Tips
+Do not commit credentials, tokens, SSH material, or host-specific secrets. Anything sensitive belongs in `~/.dotfiles-private`. When adding new tracked config, prefer portable defaults and keep machine-local overrides out of this repo.
